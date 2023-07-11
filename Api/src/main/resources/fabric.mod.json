@@ -3,7 +3,7 @@
   "id": "lilac-api",
   "version": "${version}",
   "name": "LiLaC API",
-  "description": "Lib Lapis Core API - common code for opekope2's mods",
+  "description": "Lib Lapis Core API - common API for opekope2's mods",
   "authors": [
     "opekope2"
   ],
