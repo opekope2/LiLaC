@@ -1,5 +1,7 @@
 package opekope2.lilac.api.resource.loading;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Represents a LiLaC resource loader plugin.
  */
@@ -13,5 +15,6 @@ public interface IResourceLoaderPlugin {
      *
      * @param session The current resource loading session
      */
-    IResourceLoader<?> createResourceLoader(IResourceLoadingSession session);
+    @NotNull
+    IResourceLoader<?> createResourceLoader(@NotNull IResourceLoadingSession session);
 }

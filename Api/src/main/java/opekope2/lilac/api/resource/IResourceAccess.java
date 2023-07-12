@@ -2,6 +2,7 @@ package opekope2.lilac.api.resource;
 
 import net.minecraft.util.Identifier;
 import opekope2.lilac.api.ILilacApi;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A wrapper interface to access Minecraft resources.
@@ -16,11 +17,13 @@ public interface IResourceAccess {
      *
      * @param resourcePath The path to the resource to get a reader of
      */
-    IResourceReader getResource(Identifier resourcePath);
+    @NotNull
+    IResourceReader getResource(@NotNull Identifier resourcePath);
 
     /**
      * Returns the implementation of {@link IResourceAccess}.
      */
+    @NotNull
     static IResourceAccess getInstance() {
         return ILilacApi.getImplementation().getImplementations().getResourceAccess();
     }

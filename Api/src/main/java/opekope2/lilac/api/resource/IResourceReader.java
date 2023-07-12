@@ -1,6 +1,7 @@
 package opekope2.lilac.api.resource;
 
 import opekope2.lilac.exception.ResourceNotFoundException;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,5 +17,6 @@ public interface IResourceReader extends IResource {
      * @throws IOException               If Minecraft throws it
      * @throws ResourceNotFoundException If the given resource doesn't exist. Check with {@link #exists()} beforehand
      */
+    @NotNull
     InputStream getInputStream() throws IOException, ResourceNotFoundException;
 }

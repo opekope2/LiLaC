@@ -3,6 +3,7 @@ package opekope2.lilac.exception;
 import net.minecraft.util.Identifier;
 import opekope2.lilac.api.resource.IResource;
 import opekope2.lilac.api.resource.IResourceReader;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Thrown when trying to access a resource, which doesn't exist.
@@ -18,7 +19,7 @@ public final class ResourceNotFoundException extends Exception {
      *
      * @param resource The resource ID, which was not found
      */
-    public ResourceNotFoundException(Identifier resource) {
+    public ResourceNotFoundException(@NotNull Identifier resource) {
         super("Resource '%s' doesn't exist.".formatted(resource));
         this.resource = resource;
     }
@@ -26,6 +27,7 @@ public final class ResourceNotFoundException extends Exception {
     /**
      * Returns the missing resource ID passed in the constructor.
      */
+    @NotNull
     public Identifier getResourceId() {
         return resource;
     }
