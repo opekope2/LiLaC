@@ -26,6 +26,9 @@ public interface ILilacApi {
     @NotNull
     IImplementationHolder getImplementations();
 
+    /**
+     * Returns the implementation of {@link ILilacApi}.
+     */
     @NotNull
     static ILilacApi getImplementation() {
         return ApiStub.getApiImplementation();
