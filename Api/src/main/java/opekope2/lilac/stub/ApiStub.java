@@ -4,6 +4,9 @@ import opekope2.lilac.api.IImplementationHolder;
 import opekope2.lilac.api.ILilacApi;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @hidden
+ */
 public final class ApiStub implements ILilacApi {
     private static final ILilacApi API = new ApiStub();
 
