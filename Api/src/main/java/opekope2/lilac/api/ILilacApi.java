@@ -20,7 +20,7 @@ public interface ILilacApi extends IImplementationLoader {
     String getImplementationModId();
 
     @NotNull
-    static ILilacApi getInstance() {
-        return ApiStub.getApi();
+    static ILilacApi getImplementation() {
+        return ApiStub.getApiImplementation();
     }
 }

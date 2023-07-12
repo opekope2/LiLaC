@@ -10,7 +10,7 @@ public final class ApiStub implements ILilacApi {
     }
 
     @NotNull
-    public static ILilacApi getApi() {
+    public static ILilacApi getApiImplementation() {
         return API;
     }
 
