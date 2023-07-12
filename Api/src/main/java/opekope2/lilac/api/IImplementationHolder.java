@@ -12,4 +12,9 @@ public interface IImplementationHolder {
      * Gets the implementation of {@link IResourceAccess}.
      */
     @NotNull IResourceAccess getResourceAccess();
+
+    /**
+     * Gets the implementation of {@link IRegistryLookup}.
+     */
+    @NotNull IRegistryLookup getRegistryLookup();
 }
