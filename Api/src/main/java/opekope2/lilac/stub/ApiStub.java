@@ -1,5 +1,6 @@
 package opekope2.lilac.stub;
 
+import opekope2.lilac.api.IImplementationHolder;
 import opekope2.lilac.api.ILilacApi;
 import org.jetbrains.annotations.NotNull;
 
@@ -20,13 +21,14 @@ public final class ApiStub implements ILilacApi {
     }
 
     @Override
-    public @NotNull String getImplementationModId() {
+    @NotNull
+    public String getImplementationModId() {
         return "lilac-api";
     }
 
     @Override
     @NotNull
-    public <T> T loadImplementation(@NotNull Class<T> type) {
+    public IImplementationHolder getImplementations() {
         throw new UnsupportedOperationException("LiLaC implementation is not loaded.");
     }
 }

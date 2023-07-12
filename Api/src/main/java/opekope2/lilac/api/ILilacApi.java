@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Information about the LiLaC API state.
  */
-public interface ILilacApi extends IImplementationLoader {
+public interface ILilacApi {
     /**
      * Tells whether the LiLaC implementation is loaded or not.
      * This should be checked before using any other LiLaC API if LiLaC is an optional dependency.
@@ -18,6 +18,13 @@ public interface ILilacApi extends IImplementationLoader {
      */
     @NotNull
     String getImplementationModId();
+
+    /**
+     * Gets the implementation loader instance, which is used to load the implementation of some other interfaces.
+     * This is used internally by LiLaC API, and likely isn't needed by 3rd party mods.
+     */
+    @NotNull
+    IImplementationHolder getImplementations();
 
     @NotNull
     static ILilacApi getImplementation() {
