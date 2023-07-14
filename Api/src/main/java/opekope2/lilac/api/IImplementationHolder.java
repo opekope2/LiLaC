@@ -2,6 +2,7 @@ package opekope2.lilac.api;
 
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
+import opekope2.lilac.api.tick.ITickNotifier;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -17,4 +18,9 @@ public interface IImplementationHolder {
      * Gets the implementation of {@link IRegistryLookup}.
      */
     @NotNull IRegistryLookup getRegistryLookup();
+
+    /**
+     * Gets the implementation of {@link ITickNotifier}.
+     */
+    @NotNull ITickNotifier getTickNotifier();
 }
