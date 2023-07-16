@@ -33,22 +33,26 @@ public final class ApiStub implements ILilacApi {
     }
 
     @Override
-    public @NotNull IResourceAccess getResourceAccess() {
+    @NotNull
+    public IResourceAccess getResourceAccess() {
         throw new UnsupportedOperationException("LiLaC implementation is not available.");
     }
 
     @Override
-    public @NotNull IRegistryLookup getRegistryLookup() {
+    @NotNull
+    public IRegistryLookup getRegistryLookup() {
         throw new UnsupportedOperationException("LiLaC implementation is not available.");
     }
 
     @Override
-    public @NotNull ITickNotifier getTickNotifier() {
+    @NotNull
+    public ITickNotifier getTickNotifier() {
         throw new UnsupportedOperationException("LiLaC implementation is not available.");
     }
 
     @Override
-    public @NotNull ICustomMetadataSerializer getCustomMetadataSerializer() {
+    @NotNull
+    public ICustomMetadataSerializer getCustomMetadataSerializer() {
         throw new UnsupportedOperationException("LiLaC implementation is not available.");
     }
 }
