@@ -49,13 +49,13 @@ public interface IResourceLoader extends AutoCloseable {
      * Loads the given resource and returns its in-memory representation in the
      * <a href="https://fabricmc.net/wiki/tutorial:resource">Prepare stage</a>.
      * <br>
-     * Note to implementors: after reading the resource, its input stream should be closed with {@link InputStream#close()}
-     * to avoid resource leaks.
      * This method may be called multiple times.
      *
      * @param resource The resource to be loaded
      * @return The loaded resource, which will be passed to {@link #processResource(Object)}, unless it's {@code null}
      * @throws IOException If Minecraft throws it
+     * @implNote After reading the resource, its input stream should be closed with {@link InputStream#close()}
+     * to avoid resource leaks.
      */
     @Nullable
     Object loadResource(@NotNull IResourceReader resource) throws IOException;
