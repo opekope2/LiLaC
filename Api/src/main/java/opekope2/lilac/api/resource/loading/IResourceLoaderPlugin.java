@@ -16,5 +16,5 @@ public interface IResourceLoaderPlugin {
      * @param session The current resource loading session
      */
     @NotNull
-    IResourceLoader<?> createResourceLoader(@NotNull IResourceLoadingSession session);
+    IResourceLoader createResourceLoader(@NotNull IResourceLoadingSession session);
 }

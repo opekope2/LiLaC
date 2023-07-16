@@ -3,6 +3,7 @@ package opekope2.lilac.api.resource.loading;
 import net.minecraft.util.Identifier;
 import opekope2.lilac.api.resource.IResourceReader;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,10 +11,9 @@ import java.io.InputStream;
 /**
  * A wrapper interface around Minecraft and the Fabric Resource Loader API.
  *
- * @param <T> The type of the loaded resource returned by {@link #loadResource(IResourceReader)}
  * @see net.fabricmc.fabric.api.resource
  */
-public interface IResourceLoader<T> extends AutoCloseable {
+public interface IResourceLoader extends AutoCloseable {
     /**
      * Returns the starting folder where the resource search should be started.
      * <br>
@@ -57,7 +57,8 @@ public interface IResourceLoader<T> extends AutoCloseable {
      * @return The loaded resource, which will be passed to {@link #processResource(Object)}, unless it's {@code null}
      * @throws IOException If Minecraft throws it
      */
-    T loadResource(@NotNull IResourceReader resource) throws IOException;
+    @Nullable
+    Object loadResource(@NotNull IResourceReader resource) throws IOException;
 
     /**
      * Processes the loaded resource from {@link #loadResource(IResourceReader)} in the
@@ -65,7 +66,9 @@ public interface IResourceLoader<T> extends AutoCloseable {
      * <br>
      * This method may be called multiple times.
      *
-     * @param resource The loaded resource
+     * @param resource The loaded resource.
+     *                 This is always an object returned from {@link #loadResource(IResourceReader)}.
+     *                 I can't generify it because of technical limitations
      */
-    void processResource(@NotNull T resource);
+    void processResource(@NotNull Object resource);
 }
