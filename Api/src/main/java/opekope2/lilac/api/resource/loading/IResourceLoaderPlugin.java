@@ -1,10 +1,12 @@
 package opekope2.lilac.api.resource.loading;
 
+import opekope2.lilac.api.annotation.EntrypointName;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a LiLaC resource loader plugin.
  */
+@EntrypointName("lilac-plugin-resourceloader")
 public interface IResourceLoaderPlugin {
     /**
      * Creates a new resource loader for the given resource loading session.

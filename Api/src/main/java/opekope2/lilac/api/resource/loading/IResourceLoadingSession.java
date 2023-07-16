@@ -1,5 +1,6 @@
 package opekope2.lilac.api.resource.loading;
 
+import opekope2.lilac.api.annotation.EntrypointName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -30,7 +31,8 @@ public interface IResourceLoadingSession {
     /**
      * Represents a factory, which creates extension objects requested by {@link #getExtension(String)}.
      */
-    interface IExtensionFactory {
+    @EntrypointName("lilac-plugin-resourceloadingsessionextensionfactory") // Bruh
+    interface IExtensionFactoryPlugin {
         /**
          * Creates a session extension object.
          *
