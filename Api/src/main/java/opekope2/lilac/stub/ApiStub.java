@@ -1,6 +1,7 @@
 package opekope2.lilac.stub;
 
 import opekope2.lilac.api.ILilacApi;
+import opekope2.lilac.api.modjson.ICustomMetadataSerializer;
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
 import opekope2.lilac.api.tick.ITickNotifier;
@@ -43,6 +44,11 @@ public final class ApiStub implements ILilacApi {
 
     @Override
     public @NotNull ITickNotifier getTickNotifier() {
+        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+    }
+
+    @Override
+    public @NotNull ICustomMetadataSerializer getCustomMetadataSerializer() {
         throw new UnsupportedOperationException("LiLaC implementation is not available.");
     }
 }
