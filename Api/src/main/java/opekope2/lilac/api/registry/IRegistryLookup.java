@@ -60,6 +60,6 @@ public interface IRegistryLookup {
      */
     @NotNull
     static IRegistryLookup getInstance() {
-        return ILilacApi.getImplementation().getImplementations().getRegistryLookup();
+        return ILilacApi.getImplementation().getRegistryLookup();
     }
 }

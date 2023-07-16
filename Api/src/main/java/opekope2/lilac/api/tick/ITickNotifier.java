@@ -40,6 +40,6 @@ public interface ITickNotifier {
      */
     @NotNull
     static ITickNotifier getInstance() {
-        return ILilacApi.getImplementation().getImplementations().getTickNotifier();
+        return ILilacApi.getImplementation().getTickNotifier();
     }
 }

@@ -25,6 +25,6 @@ public interface IResourceAccess {
      */
     @NotNull
     static IResourceAccess getInstance() {
-        return ILilacApi.getImplementation().getImplementations().getResourceAccess();
+        return ILilacApi.getImplementation().getResourceAccess();
     }
 }
