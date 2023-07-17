@@ -1,6 +1,5 @@
 plugins {
     id("fabric-loom")
-    kotlin("jvm")
 }
 
 base {
@@ -16,10 +15,7 @@ dependencies {
     minecraft("com.mojang", "minecraft", project.extra["minecraft_version"] as String)
     mappings("net.fabricmc", "yarn", project.extra["yarn_mappings"] as String, null, "v2")
     modImplementation("net.fabricmc", "fabric-loader", project.extra["loader_version"] as String)
-    modImplementation("net.fabricmc.fabric-api", "fabric-api", project.extra["fabric_version"] as String)
-    modImplementation(
-        "net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String
-    )
+    modImplementation(fabricApi.module("fabric-lifecycle-events-v1", project.extra["fabric_version"] as String))
 }
 
 tasks {
@@ -31,8 +27,6 @@ tasks {
         targetCompatibility = javaVersion.toString()
         options.release.set(javaVersion.toString().toInt())
     }
-
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> { kotlinOptions { jvmTarget = javaVersion.toString() } }
 
     jar {
         from("LICENSE") {
@@ -47,7 +41,6 @@ tasks {
                     "version" to project.extra["mod_version"] as String,
                     "fabricloader" to project.extra["loader_version"] as String,
                     "fabric_api" to project.extra["fabric_version"] as String,
-                    "fabric_language_kotlin" to project.extra["fabric_language_kotlin_version"] as String,
                     "minecraft" to project.extra["minecraft_version"] as String,
                     "java" to project.extra["java_version"] as String
                 )
