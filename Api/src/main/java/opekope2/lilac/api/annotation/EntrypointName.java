@@ -1,12 +1,18 @@
 package opekope2.lilac.api.annotation;
 
+import opekope2.lilac.api.Util;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Specifies the entry point name in {@code fabric.mod.json} to be searched with TODO.
+ * Specifies the entry point name in {@code fabric.mod.json} to be searched with {@link Util#getEntrypointName(Class)}.
+ *
+ * @see Util#getEntrypointName(Class)
+ * @see Util#getEntrypoints(Class)
+ * @see Util#getEntrypointContainers(Class)
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
