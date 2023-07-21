@@ -2,6 +2,7 @@ package opekope2.lilac.stub;
 
 import opekope2.lilac.api.ILilacApi;
 import opekope2.lilac.api.fabric.mod_json.ICustomMetadataSerializer;
+import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
 import opekope2.lilac.api.tick.ITickNotifier;
@@ -53,6 +54,11 @@ public final class ApiStub implements ILilacApi {
     @Override
     @NotNull
     public ICustomMetadataSerializer getCustomMetadataSerializer() {
+        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+    }
+
+    @Override
+    public @NotNull ICustomValueFactory getCustomValueFactory() {
         throw new UnsupportedOperationException("LiLaC implementation is not available.");
     }
 }

@@ -45,6 +45,11 @@ public interface ILilacApi {
     @NotNull ICustomMetadataSerializer getCustomMetadataSerializer();
 
     /**
+     * Returns the implementation of {@link ICustomValueFactory}.
+     */
+    @NotNull ICustomValueFactory getCustomValueFactory();
+
+    /**
      * Returns the implementation of {@link ILilacApi}.
      */
     @NotNull
