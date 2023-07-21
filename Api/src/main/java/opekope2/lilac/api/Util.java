@@ -22,7 +22,7 @@ public final class Util {
      * @hidden
      */
     private Util() {
-        throw new UnsupportedOperationException("Util cannot be instantiated.");
+        throw new UnsupportedOperationException("%s can't be instantiated.".formatted(Util.class.getName()));
     }
 
     /**
