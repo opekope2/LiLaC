@@ -12,4 +12,5 @@ pluginManagement {
 
 include(
     "Api",
+    "Common",
 )
