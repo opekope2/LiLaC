@@ -84,7 +84,7 @@ public final class Util {
     public static <T> List<T> getEntrypoints(@NotNull Class<T> type) {
         String name = getEntrypointName(type);
         if (name == null) {
-            throw new EntrypointException("%s is not annotated with %s!".formatted(type.getName(), EntrypointName.class.getName()));
+            throw new EntrypointException("%s is not annotated with %s.".formatted(type.getName(), EntrypointName.class.getName()));
         }
 
         return FabricLoader.getInstance().getEntrypoints(name, type);
@@ -102,7 +102,7 @@ public final class Util {
     public static <T> List<EntrypointContainer<T>> getEntrypointContainers(@NotNull Class<T> type) {
         String name = getEntrypointName(type);
         if (name == null) {
-            throw new EntrypointException("%s is not annotated with %s!".formatted(type.getName(), EntrypointName.class.getName()));
+            throw new EntrypointException("%s is not annotated with %s.".formatted(type.getName(), EntrypointName.class.getName()));
         }
 
         return FabricLoader.getInstance().getEntrypointContainers(name, type);
