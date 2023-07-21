@@ -1,6 +1,7 @@
 package opekope2.lilac.api;
 
-import opekope2.lilac.api.modjson.ICustomMetadataSerializer;
+import opekope2.lilac.api.fabric.mod_json.ICustomMetadataSerializer;
+import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
 import opekope2.lilac.api.tick.ITickNotifier;
@@ -40,7 +41,6 @@ public interface ILilacApi {
 
     /**
      * Returns the implementation of {@link ICustomMetadataSerializer}.
-     * @
      */
     @NotNull ICustomMetadataSerializer getCustomMetadataSerializer();
 
