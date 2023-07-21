@@ -47,7 +47,7 @@ public interface IResourceLoader extends AutoCloseable {
 
     /**
      * Loads the given resource and returns its in-memory representation in the
-     * <a href="https://fabricmc.net/wiki/tutorial:resource">Prepare stage</a>.
+     * <a href="https://fabricmc.net/wiki/tutorial:resource#prepare_stage">Prepare stage</a>.
      * <br>
      * This method may be called multiple times.
      *
@@ -62,7 +62,7 @@ public interface IResourceLoader extends AutoCloseable {
 
     /**
      * Processes the loaded resource from {@link #loadResource(IResourceReader)} in the
-     * <a href="https://fabricmc.net/wiki/tutorial:resource">Apply stage</a>.
+     * <a href="https://fabricmc.net/wiki/tutorial:resource#apply_stage">Apply stage</a>.
      * <br>
      * This method may be called multiple times.
      *
