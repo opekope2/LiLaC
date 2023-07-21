@@ -18,7 +18,7 @@
   "entrypoints": {},
   "depends": {
     "fabricloader": ">=${fabricloader}",
-    "fabric-api": ">=${fabric_api}",
+    "fabric-lifecycle-events-v1": ">=${fabric_lifecycle_events_v1}",
     "minecraft": ">=${minecraft}",
     "java": ">=${java}"
   }
