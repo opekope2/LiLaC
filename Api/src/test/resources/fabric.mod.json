@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "lilac-test",
+  "version": "0",
+  "custom": {
+    "lilac-test-full": {
+      "number1": 101,
+      "number2": 102,
+      "text1": "Aa",
+      "text2": "Bb",
+      "bool1": true,
+      "bool2": false,
+      "obj1": {
+        "numbers": [
+          111,
+          112
+        ],
+        "texts": [
+          "Xx",
+          "Yy"
+        ],
+        "bools": [
+          true,
+          false
+        ]
+      },
+      "obj2": {
+        "numbers": [
+          121,
+          122
+        ],
+        "texts": [
+          "AB",
+          "BA"
+        ],
+        "bools": [
+          false,
+          true
+        ]
+      }
+    },
+    "lilac-test-minimal": {
+      "number1": 201,
+      "text1": "Xy",
+      "bool1": false,
+      "obj1": {
+        "numbers": [
+          211
+        ],
+        "texts": [
+          "Yx"
+        ],
+        "bools": [
+          true
+        ]
+      }
+    },
+    "lilac-test-missing": {
+      "number2": 301,
+      "text2": "Z",
+      "bool2": false,
+      "obj2": {
+        "numbers": [
+          311
+        ],
+        "texts": [
+          "zz"
+        ],
+        "bools": [
+          true
+        ]
+      }
+    }
+  }
+}
