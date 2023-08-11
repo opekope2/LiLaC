@@ -13,5 +13,5 @@ pluginManagement {
 include(
     "Api",
     "Common",
-    "1.19.3",
+    "1.19.4",
 )

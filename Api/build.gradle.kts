@@ -25,7 +25,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform", "junit-platform-launcher")
 
     testImplementation("net.fabricmc", "fabric-loader-junit", project.extra["loader_version"] as String)
-    testRuntimeOnly(project(":1.19.3", configuration = "namedElements"))
+    testRuntimeOnly(project(":1.19.4", configuration = "namedElements"))
 
     "modTestRuntimeOnly"(fabricApi.module("fabric-resource-loader-v0", project.extra["fabric_version"] as String))
     "modTestRuntimeOnly"(

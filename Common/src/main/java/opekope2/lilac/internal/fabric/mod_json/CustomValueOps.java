@@ -6,7 +6,6 @@ import com.mojang.serialization.DynamicOps;
 import net.fabricmc.loader.api.metadata.CustomValue;
 import opekope2.lilac.api.ILilacApi;
 import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
-import opekope2.lilac.internal.dfu_compat.DataResultFactory;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -22,7 +21,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     }
 
     private <R> DataResult<R> createConversionError(CustomValue input, String targetType) {
-        return DataResultFactory.createError(() -> "Can't convert %s to %s.".formatted(input.getType().name(), targetType));
+        return DataResult.error(() -> "Can't convert %s to %s.".formatted(input.getType().name(), targetType));
     }
 
     @Override
@@ -45,7 +44,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     @Override
     public DataResult<Number> getNumberValue(CustomValue input) {
         return input.getType() == CustomValue.CvType.NUMBER
-                ? DataResultFactory.createSuccess(input.getAsNumber())
+                ? DataResult.success(input.getAsNumber())
                 : createConversionError(input, "Number");
     }
 
@@ -57,7 +56,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     @Override
     public DataResult<String> getStringValue(CustomValue input) {
         return input.getType() == CustomValue.CvType.STRING
-                ? DataResultFactory.createSuccess(input.getAsString())
+                ? DataResult.success(input.getAsString())
                 : createConversionError(input, "String");
     }
 
@@ -69,7 +68,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     @Override
     public DataResult<Boolean> getBooleanValue(CustomValue input) {
         return input.getType() == CustomValue.CvType.BOOLEAN
-                ? DataResultFactory.createSuccess(input.getAsBoolean())
+                ? DataResult.success(input.getAsBoolean())
                 : createConversionError(input, "Boolean");
     }
 
@@ -81,7 +80,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     @Override
     public DataResult<CustomValue> mergeToList(CustomValue list, CustomValue value) {
         if (list.getType() != CustomValue.CvType.ARRAY && list != empty()) {
-            return DataResultFactory.createError(() -> "Can't merge into %s (should be Array).".formatted(list.getType().name()));
+            return DataResult.error(() -> "Can't merge into %s (should be Array).".formatted(list.getType().name()));
         }
 
         List<CustomValue> l = new ArrayList<>();
@@ -90,7 +89,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
         }
         l.add(value);
 
-        return DataResultFactory.createSuccess(factory.createArray(l.toArray(CustomValue[]::new)));
+        return DataResult.success(factory.createArray(l.toArray(CustomValue[]::new)));
     }
 
     @Override
@@ -108,14 +107,14 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
         }
         m.put(key.getAsString(), value);
 
-        return DataResultFactory.createSuccess(factory.createObject(m));
+        return DataResult.success(factory.createObject(m));
     }
 
     @Override
     public DataResult<Stream<Pair<CustomValue, CustomValue>>> getMapValues(CustomValue input) {
         // IntelliJ whacky formatting moment
         return input.getType() == CustomValue.CvType.OBJECT
-                ? DataResultFactory.createSuccess(
+                ? DataResult.success(
                 StreamSupport.stream(input.getAsObject().spliterator(), false)
                         .map(pair -> new Pair<>(createString(pair.getKey()), pair.getValue())))
                 : createConversionError(input, "Map");
@@ -129,8 +128,8 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     @Override
     public DataResult<Stream<CustomValue>> getStream(CustomValue input) {
         return (input.getType() == CustomValue.CvType.ARRAY)
-                ? DataResultFactory.createSuccess(StreamSupport.stream(input.getAsArray().spliterator(), false))
-                : DataResultFactory.createError(() -> "Can't convert %s to Stream (should be Array).".formatted(input.getType().name()));
+                ? DataResult.success(StreamSupport.stream(input.getAsArray().spliterator(), false))
+                : DataResult.error(() -> "Can't convert %s to Stream (should be Array).".formatted(input.getType().name()));
     }
 
     @Override
