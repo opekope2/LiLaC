@@ -40,6 +40,11 @@ class ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener 
         logger.info("Reloading resources.")
 
         val resourceLoaderPlugins = Util.getEntrypointContainers(IResourceLoaderPlugin::class.java)
+        if (resourceLoaderPlugins.isEmpty()) {
+            logger.info("No resource loader plugins were found.")
+            return synchronizer.whenPrepared(Unit).thenRunAsync({ }, applyExecutor)
+        }
+
         val session = ResourceLoadingSession()
         val loadingFutures = mutableListOf<CompletableFuture<*>>()
 
