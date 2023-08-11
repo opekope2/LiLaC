@@ -21,7 +21,7 @@ import java.util.concurrent.Executor
 
 @Suppress("unused")
 class ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener {
-    private val logger = LoggerFactory.getLogger(javaClass)
+    private val logger = LoggerFactory.getLogger("LiLaC Resource Loader")
 
     override fun onInitializeClient() {
         ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(this)
