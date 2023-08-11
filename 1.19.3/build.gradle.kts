@@ -26,7 +26,9 @@ dependencies {
     )
 
     implementation(project(":Api", configuration = "namedElements"))
-    implementation(project(":Common"))
+    implementation(project(":Common")) {
+        isTransitive = false
+    }
 }
 
 tasks {
