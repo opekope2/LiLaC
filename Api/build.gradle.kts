@@ -37,7 +37,7 @@ val packageTestMod by tasks.creating(Jar::class) {
     from(sourceSets["test"].resources)
     include("fabric.mod.json")
     archiveClassifier = "testmod"
-    destinationDirectory = File(project.buildDir, "testlibs")
+    destinationDirectory = project.buildDir.resolve("testlibs")
 }
 
 tasks {
@@ -51,7 +51,7 @@ tasks {
     }
 
     jar {
-        from(File(rootDir, "LICENSE")) {
+        from(rootDir.resolve("LICENSE")) {
             rename { "${it}_${base.archivesName.get()}" }
         }
     }

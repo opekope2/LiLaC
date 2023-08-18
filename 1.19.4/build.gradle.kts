@@ -48,7 +48,7 @@ tasks {
     }
 
     jar {
-        from(File(rootDir, "LICENSE")) {
+        from(rootDir.resolve("LICENSE")) {
             rename { "${it}_${base.archivesName.get()}" }
         }
         from(project(":Api").sourceSets["main"].output) {
