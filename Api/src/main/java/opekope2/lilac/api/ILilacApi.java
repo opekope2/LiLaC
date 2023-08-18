@@ -4,6 +4,7 @@ import opekope2.lilac.api.fabric.mod_json.ICustomMetadataSerializer;
 import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
+import opekope2.lilac.api.resource.loading.IResourceLoadingSession;
 import opekope2.lilac.api.tick.ITickNotifier;
 import org.jetbrains.annotations.NotNull;
 
@@ -47,6 +48,14 @@ public interface ILilacApi {
      * Returns the implementation of {@link ICustomValueFactory}.
      */
     @NotNull ICustomValueFactory getCustomValueFactory();
+
+    /**
+     * Queries information about the given resource loading session.
+     *
+     * @param session The resource loading session to query
+     * @return The query result
+     */
+    @NotNull IResourceLoadingSession.IProperties getResourceLoadingSessionProperties(@NotNull IResourceLoadingSession session);
 
     /**
      * Returns the implementation of {@link ILilacApi}.

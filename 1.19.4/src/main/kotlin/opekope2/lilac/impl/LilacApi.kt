@@ -5,12 +5,14 @@ import opekope2.lilac.api.fabric.mod_json.ICustomMetadataSerializer
 import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory
 import opekope2.lilac.api.registry.IRegistryLookup
 import opekope2.lilac.api.resource.IResourceAccess
+import opekope2.lilac.api.resource.loading.IResourceLoadingSession
 import opekope2.lilac.api.tick.ITickNotifier
 import opekope2.lilac.impl.registry.RegistryLookup
 import opekope2.lilac.impl.resource.ResourceReader
 import opekope2.lilac.impl.tick.TickNotifier
 import opekope2.lilac.internal.fabric.mod_json.CustomMetadataSerializer
 import opekope2.lilac.internal.fabric.mod_json.CustomValueFactory
+import opekope2.lilac.internal.resource.loading.ResourceLoader
 
 object LilacApi : ILilacApi {
     private val customValueFactory = CustomValueFactory()
@@ -29,4 +31,7 @@ object LilacApi : ILilacApi {
     override fun getCustomMetadataSerializer(): ICustomMetadataSerializer = customMetadataSerializer
 
     override fun getCustomValueFactory(): ICustomValueFactory = customValueFactory
+
+    override fun getResourceLoadingSessionProperties(session: IResourceLoadingSession): IResourceLoadingSession.IProperties =
+        ResourceLoader.getResourceLoadingSessionProperties(session)
 }

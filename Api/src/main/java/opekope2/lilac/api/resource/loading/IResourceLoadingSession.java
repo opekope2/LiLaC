@@ -43,4 +43,16 @@ public interface IResourceLoadingSession {
         @Nullable
         Object createSessionExtension(@NotNull String modId, @NotNull IResourceLoaderPlugin plugin, @NotNull IResourceLoadingSession session);
     }
+
+    /**
+     * Information about resource loading sessions.
+     *
+     * @see opekope2.lilac.api.ILilacApi#getResourceLoadingSessionProperties(IResourceLoadingSession)
+     */
+    interface IProperties {
+        /**
+         * Returns if the resource loading session is currently active.
+         */
+        boolean isActive();
+    }
 }

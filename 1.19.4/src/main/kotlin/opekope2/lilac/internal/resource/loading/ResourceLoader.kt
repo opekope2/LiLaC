@@ -13,6 +13,7 @@ import opekope2.lilac.api.Util
 import opekope2.lilac.api.resource.IResourceReader
 import opekope2.lilac.api.resource.loading.IResourceLoader
 import opekope2.lilac.api.resource.loading.IResourceLoaderPlugin
+import opekope2.lilac.api.resource.loading.IResourceLoadingSession
 import opekope2.lilac.impl.resource.ResourceReader
 import org.slf4j.LoggerFactory
 import java.io.IOException
@@ -20,8 +21,12 @@ import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 
 @Suppress("unused")
-class ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener {
+object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener {
     private val logger = LoggerFactory.getLogger("LiLaC Resource Loader")
+    private val sessions = mutableSetOf<IResourceLoadingSession>()
+
+    fun getResourceLoadingSessionProperties(session: IResourceLoadingSession): IResourceLoadingSession.IProperties =
+        IResourceLoadingSession.IProperties { session in sessions }
 
     override fun onInitializeClient() {
         ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(this)
@@ -46,6 +51,8 @@ class ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener 
         }
 
         val session = ResourceLoadingSession()
+        sessions += session
+
         val loadingFutures = mutableListOf<CompletableFuture<*>>()
 
         fun createResourceLoader(container: EntrypointContainer<IResourceLoaderPlugin>): Pair<String, IResourceLoader> =
@@ -98,6 +105,7 @@ class ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener 
         return CompletableFuture.allOf(*loadingFutures.toTypedArray()).thenRunAsync(
             {
                 logger.info("Resources reloaded successfully.")
+                sessions -= session
             },
             applyExecutor
         )
