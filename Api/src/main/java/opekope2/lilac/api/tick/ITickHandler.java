@@ -1,7 +1,6 @@
 package opekope2.lilac.api.tick;
 
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.minecraft.client.world.ClientWorld;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -13,15 +12,16 @@ public interface ITickHandler {
      * Gets called at the end of a world tick.
      *
      * @param world The ticking world
-     * @see ClientTickEvents#END_WORLD_TICK
+     * @see net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents#END_WORLD_TICK
+     * @see net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents#END_WORLD_TICK
      */
-    void onTick(@NotNull ClientWorld world);
+    void onTick(@NotNull World world);
 
     /**
-     * Gets called by {@link ITickNotifier#forceTick()}.
-     * May be called arbitrary times between two distinct {@link #onTick(ClientWorld)} calls.
+     * Gets called by {@link ITickNotifier#forceTick(World)}.
+     * May be called arbitrary times between two distinct {@link #onTick(World)} calls.
      *
-     * @see ITickNotifier#forceTick()
+     * @see ITickNotifier#forceTick(World)
      */
-    void onForcedTick();
+    void onForcedTick(@NotNull World world);
 }

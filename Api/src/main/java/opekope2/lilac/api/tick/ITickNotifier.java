@@ -1,6 +1,7 @@
 package opekope2.lilac.api.tick;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.minecraft.world.World;
 import opekope2.lilac.api.ILilacApi;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,9 +32,10 @@ public interface ITickNotifier {
     /**
      * Force-updates every subscribed game tick handler.
      *
-     * @see ITickHandler#onForcedTick()
+     * @param world The ticking world
+     * @see ITickHandler#onForcedTick(World)
      */
-    void forceTick();
+    void forceTick(@NotNull World world);
 
     /**
      * Returns the implementation of {@link ITickNotifier}.
