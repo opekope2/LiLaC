@@ -5,7 +5,6 @@ import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
 import opekope2.lilac.api.tick.ITickNotifier;
-import opekope2.lilac.stub.ApiStub;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -54,6 +53,70 @@ public interface ILilacApi {
      */
     @NotNull
     static ILilacApi getImplementation() {
-        return ApiStub.getApiImplementation();
+        return ILilacApi$Instance.get();
+    }
+}
+
+/**
+ * @hidden
+ */
+final class ILilacApi$Instance implements ILilacApi {
+    @NotNull
+    private static final ILilacApi API = new ILilacApi$Instance();
+
+    private ILilacApi$Instance() {
+    }
+
+    @NotNull
+    public static ILilacApi get() {
+        return API;
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return false;
+    }
+
+    @Override
+    @NotNull
+    public String getImplementationModId() {
+        return "optigui-api";
+    }
+
+
+    @Override
+    @NotNull
+    public IResourceAccess getResourceAccess() {
+        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+    }
+
+    @Override
+    @NotNull
+    public IRegistryLookup getRegistryLookup() {
+        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+    }
+
+    @Override
+    @NotNull
+    public ITickNotifier getTickNotifier() {
+        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+    }
+
+    @Override
+    @NotNull
+    public ICustomMetadataSerializer getCustomMetadataSerializer() {
+        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+    }
+
+    @Override
+    @NotNull
+    public ICustomValueFactory getCustomValueFactory() {
+        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+    }
+
+    @Override
+    @NotNull
+    public IResourceLoadingSession.IProperties getResourceLoadingSessionProperties(@NotNull IResourceLoadingSession session) {
+        throw new UnsupportedOperationException("LiLaC implementation is not available.");
     }
 }
