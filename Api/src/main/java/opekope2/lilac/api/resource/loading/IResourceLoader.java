@@ -34,7 +34,6 @@ public interface IResourceLoader extends AutoCloseable {
      * @return {@code true}, if the resource may be loaded, and should be checked with its full path, {@code false} otherwise
      * @see #canLoad(Identifier)
      */
-    @Deprecated
     boolean canLoad(@NotNull String resourceName);
 
     /**
