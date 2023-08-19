@@ -1,5 +1,6 @@
 package opekope2.lilac.api;
 
+import opekope2.lilac.annotation.RequiresImplementation;
 import opekope2.lilac.api.fabric.mod_json.ICustomMetadataSerializer;
 import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
 import opekope2.lilac.api.registry.IRegistryLookup;
@@ -15,6 +16,7 @@ public interface ILilacApi {
     /**
      * Tells whether the LiLaC implementation is loaded or not.
      * This should be checked before using any other LiLaC API if LiLaC is an optional dependency.
+     * Such APIs are marked with {@link RequiresImplementation}.
      */
     boolean isAvailable();
 
@@ -27,27 +29,37 @@ public interface ILilacApi {
     /**
      * Returns the implementation of {@link IResourceAccess}.
      */
-    @NotNull IResourceAccess getResourceAccess();
+    @NotNull
+    @RequiresImplementation
+    IResourceAccess getResourceAccess();
 
     /**
      * Returns the implementation of {@link IRegistryLookup}.
      */
-    @NotNull IRegistryLookup getRegistryLookup();
+    @NotNull
+    @RequiresImplementation
+    IRegistryLookup getRegistryLookup();
 
     /**
      * Returns the implementation of {@link ITickNotifier}.
      */
-    @NotNull ITickNotifier getTickNotifier();
+    @NotNull
+    @RequiresImplementation
+    ITickNotifier getTickNotifier();
 
     /**
      * Returns the implementation of {@link ICustomMetadataSerializer}.
      */
-    @NotNull ICustomMetadataSerializer getCustomMetadataSerializer();
+    @NotNull
+    @RequiresImplementation
+    ICustomMetadataSerializer getCustomMetadataSerializer();
 
     /**
      * Returns the implementation of {@link ICustomValueFactory}.
      */
-    @NotNull ICustomValueFactory getCustomValueFactory();
+    @NotNull
+    @RequiresImplementation
+    ICustomValueFactory getCustomValueFactory();
 
     /**
      * Queries information about the given resource loading session.
@@ -55,7 +67,9 @@ public interface ILilacApi {
      * @param session The resource loading session to query
      * @return The query result
      */
-    @NotNull IResourceLoadingSession.IProperties getResourceLoadingSessionProperties(@NotNull IResourceLoadingSession session);
+    @NotNull
+    @RequiresImplementation
+    IResourceLoadingSession.IProperties getResourceLoadingSessionProperties(@NotNull IResourceLoadingSession session);
 
     /**
      * Returns the implementation of {@link ILilacApi}.

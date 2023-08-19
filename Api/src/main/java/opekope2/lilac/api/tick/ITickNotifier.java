@@ -2,6 +2,7 @@ package opekope2.lilac.api.tick;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.world.World;
+import opekope2.lilac.annotation.RequiresImplementation;
 import opekope2.lilac.api.ILilacApi;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,6 +42,7 @@ public interface ITickNotifier {
      * Returns the implementation of {@link ITickNotifier}.
      */
     @NotNull
+    @RequiresImplementation
     static ITickNotifier getInstance() {
         return ILilacApi.getImplementation().getTickNotifier();
     }

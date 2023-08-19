@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.village.VillagerType;
 import net.minecraft.world.World;
+import opekope2.lilac.annotation.RequiresImplementation;
 import opekope2.lilac.api.ILilacApi;
 import org.jetbrains.annotations.NotNull;
 
@@ -59,6 +60,7 @@ public interface IRegistryLookup {
      * Returns the implementation of {@link IRegistryLookup}.
      */
     @NotNull
+    @RequiresImplementation
     static IRegistryLookup getInstance() {
         return ILilacApi.getImplementation().getRegistryLookup();
     }

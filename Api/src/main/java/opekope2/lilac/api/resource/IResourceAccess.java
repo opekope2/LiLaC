@@ -1,6 +1,7 @@
 package opekope2.lilac.api.resource;
 
 import net.minecraft.util.Identifier;
+import opekope2.lilac.annotation.RequiresImplementation;
 import opekope2.lilac.api.ILilacApi;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,6 +25,7 @@ public interface IResourceAccess {
      * Returns the implementation of {@link IResourceAccess}.
      */
     @NotNull
+    @RequiresImplementation
     static IResourceAccess getInstance() {
         return ILilacApi.getImplementation().getResourceAccess();
     }
