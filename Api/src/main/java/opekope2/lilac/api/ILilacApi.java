@@ -109,9 +109,8 @@ final class ILilacApi$Instance implements ILilacApi {
     @Override
     @NotNull
     public String getImplementationModId() {
-        return "optigui-api";
+        return "lilac-api";
     }
-
 
     @Override
     @NotNull
