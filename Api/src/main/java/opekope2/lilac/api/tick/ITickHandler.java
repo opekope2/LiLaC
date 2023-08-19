@@ -11,17 +11,10 @@ public interface ITickHandler {
     /**
      * Gets called at the end of a world tick.
      *
-     * @param world The ticking world
+     * @param world The ticking world. Should be checked if it is client or server world
+     * @param real  True, if the tick was called from the game, false if it was called by {@link ITickNotifier#tick(World)}
      * @see net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents#END_WORLD_TICK
      * @see net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents#END_WORLD_TICK
      */
-    void onTick(@NotNull World world);
-
-    /**
-     * Gets called by {@link ITickNotifier#forceTick(World)}.
-     * May be called arbitrary times between two distinct {@link #onTick(World)} calls.
-     *
-     * @see ITickNotifier#forceTick(World)
-     */
-    void onForcedTick(@NotNull World world);
+    void onTick(@NotNull World world, boolean real);
 }

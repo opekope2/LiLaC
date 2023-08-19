@@ -1,6 +1,5 @@
 package opekope2.lilac.api.tick;
 
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.world.World;
 import opekope2.lilac.annotation.RequiresImplementation;
 import opekope2.lilac.api.ILilacApi;
@@ -8,8 +7,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Interface to notify handlers about game ticks, or "forced ticks" (when the game is paused, but update is needed).
- *
- * @see ClientTickEvents#END_WORLD_TICK
  */
 public interface ITickNotifier {
     /**
@@ -31,12 +28,12 @@ public interface ITickNotifier {
     }
 
     /**
-     * Force-updates every subscribed game tick handler.
+     * Sends a tick to every subscribed game tick handler.
      *
      * @param world The ticking world
-     * @see ITickHandler#onForcedTick(World)
+     * @see ITickHandler#onTick(World, boolean)
      */
-    void forceTick(@NotNull World world);
+    void tick(@NotNull World world);
 
     /**
      * Returns the implementation of {@link ITickNotifier}.
