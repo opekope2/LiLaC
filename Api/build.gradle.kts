@@ -36,8 +36,8 @@ dependencies {
 val packageTestMod by tasks.creating(Jar::class) {
     from(sourceSets["test"].resources)
     include("fabric.mod.json")
-    archiveClassifier = "testmod"
-    destinationDirectory = project.buildDir.resolve("testlibs")
+    archiveClassifier.set("testmod")
+    destinationDirectory.set(project.buildDir.resolve("testlibs"))
 }
 
 tasks {
