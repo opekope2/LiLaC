@@ -10,7 +10,7 @@ import opekope2.lilac.api.tick.ITickNotifier;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Information about the LiLaC API state.
+ * The core LiLaC API.
  */
 public interface ILilacApi {
     /**
@@ -28,6 +28,8 @@ public interface ILilacApi {
 
     /**
      * Returns the implementation of {@link IResourceAccess}.
+     *
+     * @see IResourceAccess#getInstance()
      */
     @NotNull
     @RequiresImplementation
@@ -35,6 +37,8 @@ public interface ILilacApi {
 
     /**
      * Returns the implementation of {@link IRegistryLookup}.
+     *
+     * @see IRegistryLookup#getInstance()
      */
     @NotNull
     @RequiresImplementation
@@ -42,6 +46,8 @@ public interface ILilacApi {
 
     /**
      * Returns the implementation of {@link ITickNotifier}.
+     *
+     * @see ITickNotifier#getInstance()
      */
     @NotNull
     @RequiresImplementation
