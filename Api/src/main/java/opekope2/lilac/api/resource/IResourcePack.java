@@ -1,7 +1,8 @@
 package opekope2.lilac.api.resource;
 
-import net.minecraft.resource.ResourcePack;
+import net.minecraft.text.Text;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A wrapper interface for Minecraft's ResourcePack class.
@@ -14,11 +15,8 @@ public interface IResourcePack {
     String getName();
 
     /**
-     * Returns the original Minecraft Resource Pack instance.
-     *
-     * @deprecated A minecraft update may break your code if you use this method
+     * Gets the description of the resource pack from its {@code pack.mcmeta}.
      */
-    @Deprecated
-    @NotNull
-    ResourcePack getResourcePack();
+    @Nullable
+    Text getDescription();
 }
