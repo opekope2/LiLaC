@@ -5,7 +5,7 @@ import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.Version;
 import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 import net.fabricmc.loader.api.metadata.ModMetadata;
-import opekope2.lilac.api.annotation.EntrypointName;
+import opekope2.lilac.annotation.EntrypointName;
 import opekope2.lilac.exception.EntrypointException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

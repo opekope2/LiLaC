@@ -1,6 +1,6 @@
 package opekope2.lilac.api.resource.loading;
 
-import opekope2.lilac.api.annotation.EntrypointName;
+import opekope2.lilac.annotation.EntrypointName;
 import org.jetbrains.annotations.NotNull;
 
 /**

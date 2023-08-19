@@ -1,4 +1,4 @@
-package opekope2.lilac.api.annotation;
+package opekope2.lilac.annotation;
 
 import opekope2.lilac.api.Util;
 
