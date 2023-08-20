@@ -22,7 +22,7 @@ import java.util.concurrent.Executor
 
 @Suppress("unused")
 object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener {
-    private val logger = LoggerFactory.getLogger("LiLaC Resource Loader")
+    private val logger = LoggerFactory.getLogger("LiLaC/ResourceLoader")
     private val sessions = mutableSetOf<IResourceLoadingSession>()
 
     fun getResourceLoadingSessionProperties(session: IResourceLoadingSession): IResourceLoadingSession.IProperties =
@@ -42,13 +42,13 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
         prepareExecutor: Executor,
         applyExecutor: Executor
     ): CompletableFuture<Void> {
-        logger.info("Reloading resources.")
-
         val resourceLoaderPlugins = Util.getEntrypointContainers(IResourceLoaderPlugin::class.java)
         if (resourceLoaderPlugins.isEmpty()) {
-            logger.info("No resource loader plugins were found.")
+            logger.info("No resource loader plugins were found, not loading resources.")
             return synchronizer.whenPrepared(Unit).thenRunAsync({ }, applyExecutor)
         }
+
+        logger.info("Reloading resources.")
 
         val session = ResourceLoadingSession()
         sessions += session
