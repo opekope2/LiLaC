@@ -1,6 +1,7 @@
 package opekope2.lilac.api.resource.loading;
 
 import opekope2.lilac.annotation.EntrypointName;
+import opekope2.lilac.api.ILilacApi;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,6 +28,17 @@ public interface IResourceLoadingSession {
     @Nullable
     default Object get(@NotNull String modId) {
         return getExtension(modId);
+    }
+
+    /**
+     * Queries information about the given resource loading session.
+     *
+     * @param session The resource loading session to query
+     * @return The query result
+     */
+    @NotNull
+    static IProperties getProperties(@NotNull IResourceLoadingSession session) {
+        return ILilacApi.getImplementation().getResourceLoadingSessionProperties(session);
     }
 
     /**
