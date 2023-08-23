@@ -115,36 +115,36 @@ final class ILilacApi$Instance implements ILilacApi {
     @Override
     @NotNull
     public IResourceAccess getResourceAccess() {
-        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 
     @Override
     @NotNull
     public IRegistryLookup getRegistryLookup() {
-        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 
     @Override
     @NotNull
     public ITickNotifier getTickNotifier() {
-        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 
     @Override
     @NotNull
     public ICustomMetadataSerializer getCustomMetadataSerializer() {
-        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 
     @Override
     @NotNull
     public ICustomValueFactory getCustomValueFactory() {
-        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 
     @Override
     @NotNull
     public IResourceLoadingSession.IProperties getResourceLoadingSessionProperties(@NotNull IResourceLoadingSession session) {
-        throw new UnsupportedOperationException("LiLaC implementation is not available.");
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 }

@@ -17,7 +17,7 @@ object RegistryLookup : IRegistryLookup {
     override fun lookupEntityId(entity: Entity): Identifier = Registries.ENTITY_TYPE.getId(entity.type)
 
     override fun lookupBiomeId(world: World, pos: BlockPos): Identifier =
-        world.getBiome(pos).key.getOrNull()?.value ?: throw RuntimeException("Can't find biome at $pos (world=$world)")
+        world.getBiome(pos).key.getOrNull()?.value ?: throw RuntimeException("Can't find biome at `$pos` in `$world`")
 
     override fun lookupVillagerProfessionId(profession: VillagerProfession): Identifier =
         Registries.VILLAGER_PROFESSION.getId(profession)

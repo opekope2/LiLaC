@@ -22,7 +22,6 @@ public final class Util {
      * @hidden
      */
     private Util() {
-        throw new UnsupportedOperationException("%s can't be instantiated.".formatted(Util.class.getName()));
     }
 
     /**
@@ -85,7 +84,7 @@ public final class Util {
     public static <T> List<@NotNull T> getEntrypoints(@NotNull Class<@NotNull T> type) {
         String name = getEntrypointName(type);
         if (name == null) {
-            throw new EntrypointException("%s is not annotated with %s.".formatted(type.getName(), EntrypointName.class.getName()));
+            throw new EntrypointException("`%s` is not annotated with `%s`".formatted(type.getName(), EntrypointName.class.getName()));
         }
 
         return FabricLoader.getInstance().getEntrypoints(name, type);
@@ -104,7 +103,7 @@ public final class Util {
     public static <T> List<EntrypointContainer<@NotNull T>> getEntrypointContainers(@NotNull Class<@NotNull T> type) {
         String name = getEntrypointName(type);
         if (name == null) {
-            throw new EntrypointException("%s is not annotated with %s.".formatted(type.getName(), EntrypointName.class.getName()));
+            throw new EntrypointException("`%s` is not annotated with `%s`".formatted(type.getName(), EntrypointName.class.getName()));
         }
 
         return FabricLoader.getInstance().getEntrypointContainers(name, type);

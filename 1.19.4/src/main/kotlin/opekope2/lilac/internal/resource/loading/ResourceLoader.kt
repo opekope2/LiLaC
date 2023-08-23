@@ -47,11 +47,11 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
     ): CompletableFuture<Void> {
         val resourceLoaderPlugins = Util.getEntrypointContainers(IResourceLoaderPlugin::class.java)
         if (resourceLoaderPlugins.isEmpty()) {
-            logger.info("No resource loader plugins were found, not loading resources.")
+            logger.info("No resource loader plugins were found, no resources to load")
             return synchronizer.whenPrepared(Unit).thenRunAsync({ }, applyExecutor)
         }
 
-        logger.info("Reloading resources.")
+        logger.info("Reloading resources")
 
         val session = ResourceLoadingSession()
         sessions += session
@@ -86,11 +86,7 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
                     prepareExecutor
                 )
                 .thenApplyAsync(
-                    { resources ->
-                        resources.mapNotNull { resource ->
-                            loader.loadResource(resource, id)
-                        }
-                    },
+                    { resources -> resources.mapNotNull { resource -> loader.loadResource(resource, id) } },
                     prepareExecutor
                 )
 
@@ -107,7 +103,7 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
                 ).exceptionallyAsync(
                     { throwable ->
                         logger.error(
-                            "Resource loader '$loader' (provided by mod '$id') threw an exception, closing the loader and rethrowing.",
+                            "Resource loader `$loader` by mod `$id` threw an exception. Closing the loader and rethrowing",
                             throwable
                         )
                         loader.close()
@@ -131,7 +127,7 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
         loadResource(resource)
     } catch (e: IOException) {
         logger.warn(
-            "Resource loader '$this' (provided by mod '$modId') threw an exception trying to load $resource, continuing reload.",
+            "Resource loader `$this` by mod `$modId` threw an exception trying to load `${resource.id}`. Continuing reload",
             e
         )
         null

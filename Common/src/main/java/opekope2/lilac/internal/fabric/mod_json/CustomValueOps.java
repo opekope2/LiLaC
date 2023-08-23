@@ -21,7 +21,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     }
 
     private <R> DataResult<R> createConversionError(CustomValue input, String targetType) {
-        return DataResult.error(() -> "Can't convert %s to %s.".formatted(input.getType().name(), targetType));
+        return DataResult.error(() -> "Can't convert `%s` to `%s`".formatted(input.getType().name(), targetType));
     }
 
     @Override
@@ -80,7 +80,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     @Override
     public DataResult<CustomValue> mergeToList(CustomValue list, CustomValue value) {
         if (list.getType() != CustomValue.CvType.ARRAY && list != empty()) {
-            return DataResult.error(() -> "Can't merge into %s (should be Array).".formatted(list.getType().name()));
+            return DataResult.error(() -> "Can't merge into `%s` (should be array)".formatted(list.getType().name()));
         }
 
         List<CustomValue> l = new ArrayList<>();
@@ -95,10 +95,10 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     @Override
     public DataResult<CustomValue> mergeToMap(CustomValue map, CustomValue key, CustomValue value) {
         if (map.getType() != CustomValue.CvType.OBJECT && map != empty()) {
-            return DataResult.error(() -> "Can't merge into %s (should be Object).".formatted(map.getType().name()));
+            return DataResult.error(() -> "Can't merge into `%s` (should be object)".formatted(map.getType().name()));
         }
         if (key.getType() != CustomValue.CvType.STRING) {
-            return DataResult.error(() -> "Key is %s (should be String).".formatted(key.getType().name()));
+            return DataResult.error(() -> "Key is `%s` (should be string)".formatted(key.getType().name()));
         }
 
         Map<String, CustomValue> m = new HashMap<>();
@@ -129,7 +129,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     public DataResult<Stream<CustomValue>> getStream(CustomValue input) {
         return (input.getType() == CustomValue.CvType.ARRAY)
                 ? DataResult.success(StreamSupport.stream(input.getAsArray().spliterator(), false))
-                : DataResult.error(() -> "Can't convert %s to Stream (should be Array).".formatted(input.getType().name()));
+                : DataResult.error(() -> "Can't convert `%s` to Stream (should be array)".formatted(input.getType().name()));
     }
 
     @Override

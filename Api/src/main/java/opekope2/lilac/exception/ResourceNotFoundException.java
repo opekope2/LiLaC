@@ -20,7 +20,7 @@ public final class ResourceNotFoundException extends Exception {
      * @param resource The resource ID, which was not found
      */
     public ResourceNotFoundException(@NotNull Identifier resource) {
-        super("Resource '%s' doesn't exist.".formatted(resource));
+        super("Resource `%s` doesn't exist".formatted(resource));
         this.resource = resource;
     }
 

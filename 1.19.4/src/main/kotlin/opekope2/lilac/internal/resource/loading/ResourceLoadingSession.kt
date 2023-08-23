@@ -70,8 +70,9 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
 
             if (excess.any()) {
                 throw EntrypointException(
-                    "Each mod can only provide up to one ${getEntrypointName(IResourceLoadingSession.IExtensionFactoryPlugin::class.java)} entrypoint. " +
-                            "The following mod(s) declare more than one: ${excess.joinToString(", ")}"
+                    "Each mod can only provide up to one `${getEntrypointName(IResourceLoadingSession.IExtensionFactoryPlugin::class.java)}` entrypoint. " +
+                            "The following mod(s) declare more than one: " +
+                            excess.joinToString(", ", prefix = "`", postfix = "`")
                 )
             }
 
