@@ -81,7 +81,8 @@ public final class Util {
      * @see #getEntrypointContainers(Class)
      * @see FabricLoader#getEntrypoints(String, Class)
      */
-    public static <T> List<T> getEntrypoints(@NotNull Class<T> type) {
+    @NotNull
+    public static <T> List<@NotNull T> getEntrypoints(@NotNull Class<@NotNull T> type) {
         String name = getEntrypointName(type);
         if (name == null) {
             throw new EntrypointException("%s is not annotated with %s.".formatted(type.getName(), EntrypointName.class.getName()));
@@ -99,7 +100,8 @@ public final class Util {
      * @see #getEntrypoints(Class)
      * @see FabricLoader#getEntrypoints(String, Class)
      */
-    public static <T> List<EntrypointContainer<T>> getEntrypointContainers(@NotNull Class<T> type) {
+    @NotNull
+    public static <T> List<EntrypointContainer<@NotNull T>> getEntrypointContainers(@NotNull Class<@NotNull T> type) {
         String name = getEntrypointName(type);
         if (name == null) {
             throw new EntrypointException("%s is not annotated with %s.".formatted(type.getName(), EntrypointName.class.getName()));
