@@ -8,9 +8,19 @@ import opekope2.lilac.api.resource.loading.IResourceLoaderPlugin
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession
 import opekope2.lilac.exception.EntrypointException
 
-class ResourceLoadingSession : IResourceLoadingSession {
+class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
     private var currentModId: String? = null
     private var currentPlugin: IResourceLoaderPlugin? = null
+
+    var stage: IResourceLoadingSession.Stage = IResourceLoadingSession.Stage.INACTIVE
+        set(value) {
+            field = value
+            lifecycleListeners.forEach { listener -> listener.onStageChanged(this) }
+        }
+
+    init {
+        lifecycleListeners.forEach { listener -> listener.onCreated(this) }
+    }
 
     fun createResourceLoader(modId: String, resourceLoaderPlugin: IResourceLoaderPlugin): IResourceLoader {
         currentModId = modId
@@ -25,6 +35,10 @@ class ResourceLoadingSession : IResourceLoadingSession {
     }
 
     override fun getExtension(modId: String): Any? {
+        if (stage != IResourceLoadingSession.Stage.INIT) {
+            throw IllegalStateException("LiLaC resource loading session extensions can only be obtained during the initialization stage. Current stage: `$stage`")
+        }
+
         return sessionExtensionFactories[modId]?.createSessionExtension(
             currentModId ?: return null,
             currentPlugin ?: return null,
@@ -32,7 +46,14 @@ class ResourceLoadingSession : IResourceLoadingSession {
         )
     }
 
+    override fun close() {
+        stage = IResourceLoadingSession.Stage.INACTIVE
+        lifecycleListeners.forEach { listener -> listener.onClosed(this) }
+    }
+
     companion object : ModInitializer {
+        val lifecycleListeners = Util.getEntrypoints(IResourceLoadingSession.ILifecycleListener::class.java)
+
         lateinit var sessionExtensionFactories: Map<String, IResourceLoadingSession.IExtensionFactoryPlugin>
             private set
 

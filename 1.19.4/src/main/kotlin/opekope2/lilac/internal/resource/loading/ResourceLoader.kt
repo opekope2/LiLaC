@@ -23,10 +23,13 @@ import java.util.concurrent.Executor
 @Suppress("unused")
 object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener {
     private val logger = LoggerFactory.getLogger("LiLaC/ResourceLoader")
-    private val sessions = mutableSetOf<IResourceLoadingSession>()
+    private val sessions = mutableSetOf<ResourceLoadingSession>()
 
     fun getResourceLoadingSessionProperties(session: IResourceLoadingSession): IResourceLoadingSession.IProperties =
-        IResourceLoadingSession.IProperties { session in sessions }
+        IResourceLoadingSession.IProperties {
+            if (session is ResourceLoadingSession && session in sessions) session.stage
+            else IResourceLoadingSession.Stage.INACTIVE
+        }
 
     override fun onInitializeClient() {
         ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(this)
@@ -61,9 +64,20 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
                 container.entrypoint
             )
 
+        val prepareStart = CompletableFuture.supplyAsync(
+            { session.stage = IResourceLoadingSession.Stage.PREPARE },
+            prepareExecutor
+        )
+        val applyWait = synchronizer.whenPrepared(Unit).thenApplyAsync(
+            { session.stage = IResourceLoadingSession.Stage.APPLY },
+            applyExecutor
+        )
+
+        session.stage = IResourceLoadingSession.Stage.INIT
+
         for ((id, loader) in resourceLoaderPlugins.map(::createResourceLoader)) {
-            val loadedResources = CompletableFuture
-                .supplyAsync(
+            val loadedResources = prepareStart
+                .thenApplyAsync(
                     { manager.findResources(loader.startingPath, loader::canLoad) },
                     prepareExecutor
                 )
@@ -81,6 +95,7 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
                 )
 
             val applyStart = loadedResources.thenCompose(synchronizer::whenPrepared)
+                .thenCombineAsync(applyWait, { resources, _ -> resources }, applyExecutor)
 
             loadingFutures += applyStart
                 .thenAcceptAsync(
@@ -104,8 +119,9 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
 
         return CompletableFuture.allOf(*loadingFutures.toTypedArray()).thenRunAsync(
             {
-                logger.info("Resources reloaded successfully.")
+                session.close()
                 sessions -= session
+                logger.info("Resources reloaded successfully")
             },
             applyExecutor
         )
