@@ -5,8 +5,7 @@
   "name": "LiLaC",
   "description": "Lib Lapis Core Implementation - common code for opekope2's mods",
   "provides": [
-    "lilac-api",
-    "lilac-impl"
+    "lilac-api"
   ],
   "authors": [
     "opekope2"
