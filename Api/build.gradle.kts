@@ -1,5 +1,13 @@
+import org.jetbrains.dokka.DokkaConfiguration
+import org.jetbrains.dokka.base.DokkaBase
+import org.jetbrains.dokka.base.DokkaBaseConfiguration
+import java.net.URL
+import java.time.Year
+
 plugins {
     id("fabric-loom")
+    kotlin("jvm")
+    id("org.jetbrains.dokka")
 }
 
 base {
@@ -95,6 +103,56 @@ tasks {
 
         testLogging {
             events("PASSED", "SKIPPED", "FAILED")
+        }
+    }
+
+    dokkaHtml {
+        moduleName.set("LiLaC API")
+        moduleVersion.set(version as String)
+        outputDirectory.set(
+            buildDir.resolve(
+                if (project.hasProperty("javaSyntax")) "docs/javaHtml"
+                else "docs/kotlinHtml"
+            )
+        )
+
+        pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
+            footerMessage = "© 2023-${Year.now().value} opekope2"
+            //customAssets = listOf(rootDir.resolve("logo-icon.svg"))
+            separateInheritedMembers = true
+        }
+
+        dokkaSourceSets.configureEach {
+            includes.from(rootDir.resolve("modules.md"))
+
+            documentedVisibilities.set(
+                setOf(
+                    DokkaConfiguration.Visibility.PUBLIC,
+                    DokkaConfiguration.Visibility.PROTECTED
+                )
+            )
+
+            sourceLink {
+                localDirectory.set(projectDir.resolve("src/main"))
+                remoteUrl.set(URL("https://github.com/opekope2/LiLaC/tree/$version/Api/src/main"))
+                remoteLineSuffix.set("#L")
+            }
+
+            externalDocumentationLink {
+                val mappingsVersion = project.extra["yarn_mappings"]
+                url.set(URL("https://maven.fabricmc.net/docs/yarn-$mappingsVersion/"))
+                packageListUrl.set(URL("https://maven.fabricmc.net/docs/yarn-$mappingsVersion/element-list"))
+            }
+            externalDocumentationLink {
+                val fabricVersion = project.extra["fabric_version"]
+                url.set(URL("https://maven.fabricmc.net/docs/fabric-api-$fabricVersion/"))
+                packageListUrl.set(URL("https://maven.fabricmc.net/docs/fabric-api-$fabricVersion/element-list"))
+            }
+
+            // Apply these last, otherwise the other options get ignored
+            // You don't want to know how many hours I spent on this...
+            jdkVersion.set(project.extra["java_version"] as Int)
+            languageVersion.set(System.getProperty("kotlin_version"))
         }
     }
 }
