@@ -22,17 +22,18 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
         lifecycleListeners.forEach { listener -> listener.onCreated(this) }
     }
 
-    fun createResourceLoader(modId: String, resourceLoaderPlugin: IResourceLoaderPlugin): IResourceLoader {
-        currentModId = modId
-        currentPlugin = resourceLoaderPlugin
+    fun createResourceLoader(modId: String, resourceLoaderPlugin: IResourceLoaderPlugin): IResourceLoader =
+        synchronized(lock) {
+            currentModId = modId
+            currentPlugin = resourceLoaderPlugin
 
-        val loader = resourceLoaderPlugin.createResourceLoader(this)
+            val loader = resourceLoaderPlugin.createResourceLoader(this)
 
-        currentModId = null
-        currentPlugin = null
+            currentModId = null
+            currentPlugin = null
 
-        return loader
-    }
+            loader
+        }
 
     override fun getExtension(modId: String): Any? {
         if (stage != IResourceLoadingSession.Stage.INIT) {
@@ -52,6 +53,8 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
     }
 
     companion object : ModInitializer {
+        private val lock = Any()
+
         val lifecycleListeners = Util.getEntrypoints(IResourceLoadingSession.ILifecycleListener::class.java)
 
         lateinit var sessionExtensionFactories: Map<String, IResourceLoadingSession.IExtensionFactoryPlugin>
