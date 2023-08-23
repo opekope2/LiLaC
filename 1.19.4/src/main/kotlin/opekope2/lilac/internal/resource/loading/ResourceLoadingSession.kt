@@ -1,8 +1,7 @@
 package opekope2.lilac.internal.resource.loading
 
 import net.fabricmc.api.ModInitializer
-import opekope2.lilac.api.Util.getEntrypointContainers
-import opekope2.lilac.api.Util.getEntrypointName
+import opekope2.lilac.api.Util.*
 import opekope2.lilac.api.resource.loading.IResourceLoader
 import opekope2.lilac.api.resource.loading.IResourceLoaderPlugin
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession
@@ -55,7 +54,7 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
     companion object : ModInitializer {
         private val lock = Any()
 
-        val lifecycleListeners = Util.getEntrypoints(IResourceLoadingSession.ILifecycleListener::class.java)
+        val lifecycleListeners = getEntrypoints(IResourceLoadingSession.ILifecycleListener::class.java)
 
         lateinit var sessionExtensionFactories: Map<String, IResourceLoadingSession.IExtensionFactoryPlugin>
             private set
