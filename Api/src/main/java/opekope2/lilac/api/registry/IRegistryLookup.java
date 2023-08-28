@@ -2,6 +2,7 @@ package opekope2.lilac.api.registry;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.village.VillagerProfession;
@@ -15,6 +16,14 @@ import org.jetbrains.annotations.NotNull;
  * A wrapper interface for searching the Minecraft registry.
  */
 public interface IRegistryLookup {
+    /**
+     * Finds the ID of the given {@code item} in the registry.
+     *
+     * @param item The item instance to look up
+     */
+    @NotNull
+    Identifier lookupItemId(@NotNull Item item);
+
     /**
      * Finds the ID of the given {@code block} in the registry.
      *
