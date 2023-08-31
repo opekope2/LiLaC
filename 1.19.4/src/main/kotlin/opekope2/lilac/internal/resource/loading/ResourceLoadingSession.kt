@@ -1,7 +1,7 @@
 package opekope2.lilac.internal.resource.loading
 
 import net.fabricmc.api.ModInitializer
-import opekope2.lilac.api.Util.*
+import opekope2.lilac.util.Util.*
 import opekope2.lilac.api.resource.loading.IResourceLoader
 import opekope2.lilac.api.resource.loading.IResourceLoaderPlugin
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession

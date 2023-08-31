@@ -9,7 +9,7 @@ import net.minecraft.resource.ResourceReloader
 import net.minecraft.resource.ResourceType
 import net.minecraft.util.Identifier
 import net.minecraft.util.profiler.Profiler
-import opekope2.lilac.api.Util
+import opekope2.lilac.util.Util
 import opekope2.lilac.api.resource.IResourceReader
 import opekope2.lilac.api.resource.loading.IResourceLoader
 import opekope2.lilac.api.resource.loading.IResourceLoaderPlugin

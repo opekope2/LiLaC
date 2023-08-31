@@ -1,4 +1,4 @@
-package opekope2.lilac.api;
+package opekope2.lilac.util;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
