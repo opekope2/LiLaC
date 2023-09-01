@@ -44,8 +44,8 @@ public interface IResourceLoadingSession {
     /**
      * Represents a factory, which creates extension objects requested by {@link #getExtension(String)}.
      */
-    @EntrypointName("lilac-plugin-resourceloadingsessionextensionfactory") // Bruh
-    interface IExtensionFactoryPlugin {
+    @EntrypointName("lilac-resourceloadingsession-extensionfactory") // Bruh
+    interface IExtensionFactory {
         /**
          * Creates a session extension object.
          *
@@ -98,7 +98,7 @@ public interface IResourceLoadingSession {
     /**
      * Interface, which gets notified about {@link IResourceLoadingSession} creation, closure, and stage changes.
      */
-    @EntrypointName("lilac-plugin-resourceloadingsessionlifecyclelistener")
+    @EntrypointName("lilac-resourceloadingsession-lifecyclelistener")
     interface ILifecycleListener {
         /**
          * Called when an {@link IResourceLoadingSession} is created.

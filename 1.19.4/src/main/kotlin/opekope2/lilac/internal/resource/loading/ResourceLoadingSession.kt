@@ -55,11 +55,11 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
 
         val lifecycleListeners = getEntrypoints(IResourceLoadingSession.ILifecycleListener::class.java)
 
-        lateinit var sessionExtensionFactories: Map<String, IResourceLoadingSession.IExtensionFactoryPlugin>
+        lateinit var sessionExtensionFactories: Map<String, IResourceLoadingSession.IExtensionFactory>
             private set
 
         override fun onInitialize() {
-            val factories = getEntrypointContainers(IResourceLoadingSession.IExtensionFactoryPlugin::class.java)
+            val factories = getEntrypointContainers(IResourceLoadingSession.IExtensionFactory::class.java)
                 .groupBy { container -> container.provider.metadata.id }
 
             val excess = factories
@@ -68,7 +68,7 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
 
             if (excess.any()) {
                 throw EntrypointException(
-                    "Each mod can only provide up to one `${getEntrypointName(IResourceLoadingSession.IExtensionFactoryPlugin::class.java)}` entrypoint. " +
+                    "Each mod can only provide up to one `${getEntrypointName(IResourceLoadingSession.IExtensionFactory::class.java)}` entrypoint. " +
                             "The following mod(s) declare more than one: " +
                             excess.joinToString(", ", prefix = "`", postfix = "`")
                 )
