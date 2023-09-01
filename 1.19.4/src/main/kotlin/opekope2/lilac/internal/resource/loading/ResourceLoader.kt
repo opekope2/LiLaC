@@ -12,7 +12,6 @@ import net.minecraft.util.profiler.Profiler
 import opekope2.lilac.util.Util
 import opekope2.lilac.api.resource.IResourceReader
 import opekope2.lilac.api.resource.loading.IResourceLoader
-import opekope2.lilac.api.resource.loading.IResourceLoaderPlugin
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession
 import opekope2.lilac.impl.resource.ResourceReader
 import org.slf4j.LoggerFactory
@@ -45,7 +44,7 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
         prepareExecutor: Executor,
         applyExecutor: Executor
     ): CompletableFuture<Void> {
-        val resourceLoaderPlugins = Util.getEntrypointContainers(IResourceLoaderPlugin::class.java)
+        val resourceLoaderPlugins = Util.getEntrypointContainers(IResourceLoader.IFactory::class.java)
         if (resourceLoaderPlugins.isEmpty()) {
             logger.info("No resource loader plugins were found, no resources to load")
             return synchronizer.whenPrepared(Unit).thenRunAsync({ }, applyExecutor)
@@ -58,7 +57,7 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
 
         val loadingFutures = mutableListOf<CompletableFuture<*>>()
 
-        fun createResourceLoader(container: EntrypointContainer<IResourceLoaderPlugin>): Pair<String, IResourceLoader> =
+        fun createResourceLoader(container: EntrypointContainer<IResourceLoader.IFactory>): Pair<String, IResourceLoader> =
             container.provider.metadata.id to session.createResourceLoader(
                 container.provider.metadata.id,
                 container.entrypoint

@@ -3,13 +3,12 @@ package opekope2.lilac.internal.resource.loading
 import net.fabricmc.api.ModInitializer
 import opekope2.lilac.util.Util.*
 import opekope2.lilac.api.resource.loading.IResourceLoader
-import opekope2.lilac.api.resource.loading.IResourceLoaderPlugin
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession
 import opekope2.lilac.exception.EntrypointException
 
 class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
     private var currentModId: String? = null
-    private var currentPlugin: IResourceLoaderPlugin? = null
+    private var currentFactory: IResourceLoader.IFactory? = null
 
     var stage: IResourceLoadingSession.Stage = IResourceLoadingSession.Stage.INACTIVE
         set(value) {
@@ -21,15 +20,15 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
         lifecycleListeners.forEach { listener -> listener.onCreated(this) }
     }
 
-    fun createResourceLoader(modId: String, resourceLoaderPlugin: IResourceLoaderPlugin): IResourceLoader =
+    fun createResourceLoader(modId: String, resourceLoaderFactory: IResourceLoader.IFactory): IResourceLoader =
         synchronized(lock) {
             currentModId = modId
-            currentPlugin = resourceLoaderPlugin
+            currentFactory = resourceLoaderFactory
 
-            val loader = resourceLoaderPlugin.createResourceLoader(this)
+            val loader = resourceLoaderFactory.createResourceLoader(this)
 
             currentModId = null
-            currentPlugin = null
+            currentFactory = null
 
             loader
         }
@@ -41,7 +40,7 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
 
         return sessionExtensionFactories[modId]?.createSessionExtension(
             currentModId ?: return null,
-            currentPlugin ?: return null,
+            currentFactory ?: return null,
             this
         )
     }

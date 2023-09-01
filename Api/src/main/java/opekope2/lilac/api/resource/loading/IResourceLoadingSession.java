@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents a resource loading session.
  *
- * @see IResourceLoaderPlugin#createResourceLoader(IResourceLoadingSession)
+ * @see IResourceLoader.IFactory#createResourceLoader(IResourceLoadingSession)
  */
 public interface IResourceLoadingSession {
     /**
@@ -50,11 +50,11 @@ public interface IResourceLoadingSession {
          * Creates a session extension object.
          *
          * @param modId   The mod, which asked for a session extension object
-         * @param plugin  The plugin instance, which asked for a session extension object
+         * @param factory The factory instance, which asked for a session extension object
          * @param session The resource loading session, in which the session extension object was asked
          */
         @Nullable
-        Object createSessionExtension(@NotNull String modId, @NotNull IResourceLoaderPlugin plugin, @NotNull IResourceLoadingSession session);
+        Object createSessionExtension(@NotNull String modId, @NotNull IResourceLoader.IFactory factory, @NotNull IResourceLoadingSession session);
     }
 
     /**
@@ -80,7 +80,7 @@ public interface IResourceLoadingSession {
          */
         INACTIVE,
         /**
-         * The stage, when LiLaC configures {@link IResourceLoaderPlugin}s.
+         * The stage, when LiLaC configures {@link IResourceLoader.IFactory resource loader factories}.
          */
         INIT,
         /**

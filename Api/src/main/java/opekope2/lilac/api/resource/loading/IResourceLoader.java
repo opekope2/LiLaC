@@ -1,6 +1,7 @@
 package opekope2.lilac.api.resource.loading;
 
 import net.minecraft.util.Identifier;
+import opekope2.lilac.annotation.EntrypointName;
 import opekope2.lilac.api.resource.IResourceReader;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -70,4 +71,22 @@ public interface IResourceLoader extends AutoCloseable {
      *                 I can't generify it because of technical limitations
      */
     void processResource(@NotNull Object resource);
+
+    /**
+     * Represents a LiLaC resource loader factory.
+     */
+    @EntrypointName("lilac-resourceloader-factory")
+    interface IFactory {
+        /**
+         * Creates a new resource loader for the given resource loading session.
+         * The session instance will be unique for each resource loading session.
+         * <br>
+         * This is called at the beginning of the resource loading process.
+         * At the end of the resource loading process, {@link IResourceLoader#close()} is called.
+         *
+         * @param session The current resource loading session
+         */
+        @NotNull
+        IResourceLoader createResourceLoader(@NotNull IResourceLoadingSession session);
+    }
 }
