@@ -1,6 +1,6 @@
 package opekope2.lilac.annotation;
 
-import opekope2.lilac.api.Util;
+import opekope2.lilac.util.Util;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
