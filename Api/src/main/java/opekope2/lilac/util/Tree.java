@@ -124,11 +124,11 @@ public final class Tree {
                 styles.push(false);
             }
 
-            for (int i = 0, size = styles.size(); i < size - 1; i++) {
+            for (int i = 1, size = styles.size(); i < size - 1; i++) {
                 builder.append(styles.get(i) ? "│ " : "  ");
             }
 
-            builder.append(lastChild ? "└─" : "├─");
+            builder.append(styles.size() == 1 ? "" : (lastChild ? "└─" : "├─"));
             builder.append(node.text).append(System.lineSeparator());
         }
 
