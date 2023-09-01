@@ -66,6 +66,11 @@ public final class Tree {
         public Node appendChild(@NotNull String text) {
             return new Node(text, this);
         }
+
+        @Override
+        public String toString() {
+            return Tree.Formatter.format(this);
+        }
     }
 
     /**
