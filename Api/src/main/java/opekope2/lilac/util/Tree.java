@@ -105,7 +105,7 @@ public final class Tree {
          *
          * @param function The function to execute while indented
          */
-        public void indent(@NotNull Consumer<Formatter> function) {
+        private void indent(@NotNull Consumer<Formatter> function) {
             styles.push(true);
             function.accept(this);
             styles.pop();
@@ -118,7 +118,7 @@ public final class Tree {
          * @param lastChild Whether the given node is the last node of its parent node.
          *                  Should be {@code true}, if the node is a root node
          */
-        public void appendNode(@NotNull Node node, boolean lastChild) {
+        private void appendNode(@NotNull Node node, boolean lastChild) {
             if (lastChild) {
                 styles.pop();
                 styles.push(false);
@@ -139,7 +139,7 @@ public final class Tree {
          * @param lastChild Whether the given node is the last node of its parent node.
          *                  Should be {@code true}, if the node is a root node
          */
-        public void append(@NotNull Node node, boolean lastChild) {
+        private void append(@NotNull Node node, boolean lastChild) {
             indent(formatter -> {
                 formatter.appendNode(node, lastChild);
 
