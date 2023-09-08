@@ -18,8 +18,8 @@
   "entrypoints": {},
   "depends": {
     "fabricloader": ">=${fabricloader}",
-    "fabric-lifecycle-events-v1": ">=${fabric_lifecycle_events_v1}",
-    "minecraft": ">=${minecraft}",
+    "fabric-lifecycle-events-v1": "*",
+    "minecraft": ">=1.19.4 <1.20.2",
     "java": ">=${java}"
   }
 }
