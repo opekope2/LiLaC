@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "lilac-api",
+  "version": "${version}",
+  "name": "LiLaC API",
+  "description": "Lib Lapis Core API - common API for opekope2's mods",
+  "authors": [
+    "opekope2"
+  ],
+  "contact": {
+    "homepage": "https://opekope2.github.io/LiLaC",
+    "sources": "https://github.com/opekope2/LiLaC",
+    "issues": "https://github.com/opekope2/LiLaC/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/lilac-api/icon.png",
+  "environment": "*",
+  "entrypoints": {},
+  "depends": {
+    "fabricloader": ">=${fabricloader}",
+    "fabric-lifecycle-events-v1": "*",
+    "minecraft": ">=1.19.4 <1.20.2",
+    "java": ">=${java}"
+  }
+}
