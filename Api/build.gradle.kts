@@ -118,7 +118,7 @@ tasks {
 
         pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
             footerMessage = "© 2023-${Year.now().value} opekope2"
-            //customAssets = listOf(rootDir.resolve("logo-icon.svg"))
+            customAssets = listOf(rootDir.resolve("logo-icon.svg"))
             separateInheritedMembers = true
         }
 
