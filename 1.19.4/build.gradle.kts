@@ -66,16 +66,7 @@ tasks {
                 mutableMapOf(
                     "version" to project.extra["mod_version"] as String,
                     "fabricloader" to project.extra["loader_version"] as String,
-                    "fabric_lifecycle_events_v1" to fabricApi.moduleVersion(
-                        "fabric-lifecycle-events-v1",
-                        project.extra["fabric_version"] as String
-                    ),
-                    "fabric_resource_loader_v0" to fabricApi.moduleVersion(
-                        "fabric-resource-loader-v0",
-                        project.extra["fabric_version"] as String
-                    ),
                     "fabric_language_kotlin" to project.extra["fabric_language_kotlin_version"] as String,
-                    "minecraft" to project.extra["minecraft_version"] as String,
                     "java" to project.extra["java_version"] as String
                 )
             )
