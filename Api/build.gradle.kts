@@ -14,7 +14,7 @@ base {
     archivesName.set(project.extra["archives_base_name"] as String)
 }
 
-version = project.extra["mod_version"] as String
+version = "${project.extra["mod_version"]}-api"
 group = project.extra["maven_group"] as String
 
 repositories {}
@@ -64,11 +64,15 @@ tasks {
         }
     }
 
+    remapJar {
+        archiveBaseName.set("lilac")
+    }
+
     processResources {
         filesMatching("fabric.mod.json") {
             expand(
                 mutableMapOf(
-                    "version" to project.extra["mod_version"] as String,
+                    "version" to version as String,
                     "fabricloader" to project.extra["loader_version"] as String,
                     "fabric_lifecycle_events_v1" to fabricApi.moduleVersion(
                         "fabric-lifecycle-events-v1",

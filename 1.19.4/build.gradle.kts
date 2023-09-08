@@ -10,7 +10,7 @@ base {
     archivesName.set(project.extra["archives_base_name"] as String)
 }
 
-version = project.extra["mod_version"] as String
+version = "${project.extra["mod_version"]}-mc.1.19.4"
 group = project.extra["maven_group"] as String
 
 repositories {}
@@ -64,7 +64,7 @@ tasks {
         filesMatching("fabric.mod.json") {
             expand(
                 mutableMapOf(
-                    "version" to project.extra["mod_version"] as String,
+                    "version" to version as String,
                     "fabricloader" to project.extra["loader_version"] as String,
                     "fabric_language_kotlin" to project.extra["fabric_language_kotlin_version"] as String,
                     "java" to project.extra["java_version"] as String
