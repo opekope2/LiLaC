@@ -10,7 +10,7 @@ base {
     archivesName.set(project.extra["archives_base_name"] as String)
 }
 
-version = "${project.extra["mod_version"]}-mc.1.19.4"
+version = project.extra["mod_version"] as String
 group = project.extra["maven_group"] as String
 
 repositories {}
