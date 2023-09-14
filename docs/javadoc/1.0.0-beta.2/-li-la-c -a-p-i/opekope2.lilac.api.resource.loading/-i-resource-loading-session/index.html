@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>IResourceLoadingSession</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../../images/logo-icon.svg">
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>LiLaC API</span>
+            </a>
+    </div>
+    <div>
+1.0.0-beta.2-api    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":Api:dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="LiLaC API::opekope2.lilac.api.resource.loading/IResourceLoadingSession///PointingToDeclaration//-165573425">
+  <div class="breadcrumbs"><a href="../../../index.html">LiLaC API</a><span class="delimiter">/</span><a href="../index.html">opekope2.lilac.api.resource.loading</a><span class="delimiter">/</span><span class="current">IResourceLoadingSession</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>IResource</span><wbr></wbr><span>Loading</span><wbr></wbr><span><span>Session</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">IResourceLoadingSession</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/opekope2/LiLaC/tree/1.0.0-beta.2/Api/src/main/java/opekope2/lilac/api/resource/loading/IResourceLoadingSession.java#L13">source</a>)</span></span></div><p class="paragraph">Represents a resource loading session.</p><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-i-resource-loader/-i-factory/create-resource-loader.html"><span>IResource</span><wbr></wbr><span>Loader.</span><wbr></wbr><span>IFactory</span></a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1218465251%2FClasslikes%2F-165573425" anchor-label="IExtensionFactory" id="1218465251%2FClasslikes%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-extension-factory/index.html"><span>IExtension</span><wbr></wbr><span><span>Factory</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1218465251%2FClasslikes%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-i-extension-factory/index.html">IExtensionFactory</a></div><div class="brief ">Represents a factory, which creates extension objects requested by <a href="get-extension.html">getExtension</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-753110986%2FClasslikes%2F-165573425" anchor-label="ILifecycleListener" id="-753110986%2FClasslikes%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-lifecycle-listener/index.html"><span>ILifecycle</span><wbr></wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-753110986%2FClasslikes%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-i-lifecycle-listener/index.html">ILifecycleListener</a></div><div class="brief ">Interface, which gets notified about <a href="index.html">IResourceLoadingSession</a> creation, closure, and stage changes.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1475037381%2FClasslikes%2F-165573425" anchor-label="IProperties" id="-1475037381%2FClasslikes%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-properties/index.html"><span><span>IProperties</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1475037381%2FClasslikes%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-i-properties/index.html">IProperties</a></div><div class="brief ">Information about resource loading sessions.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1940382073%2FClasslikes%2F-165573425" anchor-label="Stage" id="1940382073%2FClasslikes%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-stage/index.html"><span><span>Stage</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1940382073%2FClasslikes%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-stage/index.html">Stage</a></div><div class="brief ">Resource loading session stages</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-236028535%2FFunctions%2F-165573425" anchor-label="get" id="-236028535%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get.html"><span><span>get</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-236028535%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get.html"><span class="token function">get</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>modId<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span> </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></div><div class="brief ">Asks the mod with the given ID for a session extension object, but with Kotlin syntax.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-149350456%2FFunctions%2F-165573425" anchor-label="getExtension" id="-149350456%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-extension.html"><span>get</span><wbr></wbr><span><span>Extension</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-149350456%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-extension.html"><span class="token function">getExtension</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>modId<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span> </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></div><div class="brief ">Asks the mod with the given ID for a session extension object.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1332850690%2FFunctions%2F-165573425" anchor-label="getProperties" id="-1332850690%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-properties.html"><span>get</span><wbr></wbr><span><span>Properties</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1332850690%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-properties.html"><span class="token function">getProperties</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>session<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="index.html">IResourceLoadingSession</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="-i-properties/index.html">IResourceLoadingSession.IProperties</a></div><div class="brief ">Queries information about the given resource loading session.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 opekope2. LiLaC is not an official Minecraft product. Not associated with or endorsed by Mojang Studios.</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
