@@ -3,7 +3,6 @@ package opekope2.lilac.internal.resource.loading
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
-import net.fabricmc.loader.api.entrypoint.EntrypointContainer
 import net.minecraft.resource.ResourceManager
 import net.minecraft.resource.ResourceReloader
 import net.minecraft.resource.ResourceType
@@ -57,11 +56,14 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
 
         val loadingFutures = mutableListOf<CompletableFuture<*>>()
 
-        fun createResourceLoader(container: EntrypointContainer<IResourceLoader.IFactory>): Pair<String, IResourceLoader> =
+        session.stage = IResourceLoadingSession.Stage.INIT
+
+        val identifiedResourceLoaders = resourceLoaderPlugins.map { container ->
             container.provider.metadata.id to session.createResourceLoader(
                 container.provider.metadata.id,
                 container.entrypoint
             )
+        }
 
         val prepareStart = CompletableFuture.supplyAsync(
             { session.stage = IResourceLoadingSession.Stage.PREPARE },
@@ -72,9 +74,7 @@ object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener
             applyExecutor
         )
 
-        session.stage = IResourceLoadingSession.Stage.INIT
-
-        for ((id, loader) in resourceLoaderPlugins.map(::createResourceLoader)) {
+        for ((id, loader) in identifiedResourceLoaders) {
             val loadedResources = prepareStart
                 .thenApplyAsync(
                     { manager.findResources(loader.startingPath, loader::canLoad) },

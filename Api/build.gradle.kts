@@ -2,7 +2,6 @@ import org.jetbrains.dokka.DokkaConfiguration
 import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
 import java.net.URL
-import java.time.Year
 
 plugins {
     id("fabric-loom")
@@ -116,7 +115,7 @@ tasks {
         )
 
         pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
-            footerMessage = "© 2023-${Year.now().value} opekope2"
+            footerMessage = "© 2023 opekope2. ${project.extra["mojank_eula_compliance_footer"]}"
             customAssets = listOf(rootDir.resolve("logo-icon.svg"))
             separateInheritedMembers = true
         }
@@ -133,7 +132,7 @@ tasks {
 
             sourceLink {
                 localDirectory.set(projectDir.resolve("src/main"))
-                remoteUrl.set(URL("https://github.com/opekope2/LiLaC/tree/$version/Api/src/main"))
+                remoteUrl.set(URL("https://github.com/opekope2/LiLaC/tree/${project.extra["mod_version"]}/Api/src/main"))
                 remoteLineSuffix.set("#L")
             }
 
@@ -146,6 +145,11 @@ tasks {
                 val fabricVersion = project.extra["fabric_version"]
                 url.set(URL("https://maven.fabricmc.net/docs/fabric-api-$fabricVersion/"))
                 packageListUrl.set(URL("https://maven.fabricmc.net/docs/fabric-api-$fabricVersion/element-list"))
+            }
+            externalDocumentationLink {
+                val loaderVersion = project.extra["fabric_loader"]
+                url.set(URL("https://maven.fabricmc.net/docs/fabric-loader-$loaderVersion/"))
+                packageListUrl.set(URL("https://maven.fabricmc.net/docs/fabric-loader-$loaderVersion/element-list"))
             }
 
             // Apply these last, otherwise the other options get ignored
