@@ -19,7 +19,7 @@
   "depends": {
     "fabricloader": ">=${fabricloader}",
     "fabric-lifecycle-events-v1": "*",
-    "minecraft": ">=1.19.4 <1.20.2",
+    "minecraft": ">=1.19.4 <=1.20.2",
     "java": ">=${java}"
   }
 }
