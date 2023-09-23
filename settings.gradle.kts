@@ -12,6 +12,7 @@ pluginManagement {
 }
 
 include(
+    "LiLaC",
     "Api",
     "Common",
     "1.19.4",
