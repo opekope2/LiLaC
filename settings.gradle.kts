@@ -14,6 +14,6 @@ pluginManagement {
 include(
     "LiLaC",
     "Api",
-    "Common",
+    "ResourceLoaderCore",
     "1.19.4",
 )
