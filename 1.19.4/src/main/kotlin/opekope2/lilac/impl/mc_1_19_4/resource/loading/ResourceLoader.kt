@@ -1,4 +1,4 @@
-package opekope2.lilac.internal.resource.loading
+package opekope2.lilac.impl.mc_1_19_4.resource.loading
 
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
@@ -11,7 +11,9 @@ import net.minecraft.util.profiler.Profiler
 import opekope2.lilac.api.resource.IResourceReader
 import opekope2.lilac.api.resource.loading.IResourceLoader
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession
-import opekope2.lilac.impl.resource.ResourceReader
+import opekope2.lilac.internal.resource.loading.IResourceLoadingSessionHolder
+import opekope2.lilac.internal.resource.loading.ResourceLoadingSession
+import opekope2.lilac.impl.mc_1_19_4.resource.ResourceReader
 import opekope2.lilac.util.Util
 import org.slf4j.LoggerFactory
 import java.io.IOException
@@ -19,11 +21,11 @@ import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 
 @Suppress("unused")
-object ResourceLoader : ClientModInitializer, IdentifiableResourceReloadListener {
+object ResourceLoader : IResourceLoadingSessionHolder, ClientModInitializer, IdentifiableResourceReloadListener {
     private val logger = LoggerFactory.getLogger("LiLaC/ResourceLoader")
     private val sessions = mutableSetOf<ResourceLoadingSession>()
 
-    fun getResourceLoadingSessionProperties(session: IResourceLoadingSession): IResourceLoadingSession.IProperties =
+    override fun getResourceLoadingSessionProperties(session: IResourceLoadingSession): IResourceLoadingSession.IProperties =
         IResourceLoadingSession.IProperties {
             if (session is ResourceLoadingSession && session in sessions) session.stage
             else IResourceLoadingSession.Stage.INACTIVE

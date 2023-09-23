@@ -1,4 +1,4 @@
-package opekope2.lilac.impl.registry
+package opekope2.lilac.impl.mc_1_19_4.registry
 
 import net.minecraft.block.Block
 import net.minecraft.entity.Entity

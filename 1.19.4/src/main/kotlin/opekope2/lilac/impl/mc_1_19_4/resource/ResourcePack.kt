@@ -1,4 +1,4 @@
-package opekope2.lilac.impl.resource
+package opekope2.lilac.impl.mc_1_19_4.resource
 
 import net.minecraft.resource.ResourcePack
 import net.minecraft.resource.metadata.PackResourceMetadata
