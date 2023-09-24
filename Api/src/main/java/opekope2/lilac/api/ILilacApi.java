@@ -1,6 +1,7 @@
 package opekope2.lilac.api;
 
 import opekope2.lilac.annotation.RequiresImplementation;
+import opekope2.lilac.api.dfu.IDataResultFactory;
 import opekope2.lilac.api.fabric.mod_json.ICustomMetadataSerializer;
 import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
 import opekope2.lilac.api.registry.IRegistryLookup;
@@ -78,6 +79,15 @@ public interface ILilacApi {
     IResourceLoadingSession.IProperties getResourceLoadingSessionProperties(@NotNull IResourceLoadingSession session);
 
     /**
+     * Returns the implementation of {@link IDataResultFactory}.
+     *
+     * @see IDataResultFactory#getInstance()
+     */
+    @NotNull
+    @RequiresImplementation
+    IDataResultFactory getDataResultFactory();
+
+    /**
      * Returns the implementation of {@link ILilacApi}.
      */
     @NotNull
@@ -145,6 +155,12 @@ final class ILilacApi$Instance implements ILilacApi {
     @Override
     @NotNull
     public IResourceLoadingSession.IProperties getResourceLoadingSessionProperties(@NotNull IResourceLoadingSession session) {
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
+    }
+
+    @Override
+    @NotNull
+    public IDataResultFactory getDataResultFactory() {
         throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 }

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "lilac",
+  "version": "${version}",
+  "name": "LiLaC",
+  "description": "Lib Lapis Core Implementation - common code for opekope2's mods",
+  "provides": [
+    "lilac-api"
+  ],
+  "authors": [
+    "opekope2"
+  ],
+  "contact": {
+    "homepage": "https://opekope2.github.io/LiLaC",
+    "sources": "https://github.com/opekope2/LiLaC",
+    "issues": "https://github.com/opekope2/LiLaC/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/lilac/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "opekope2.lilac.internal.resource.loading.ResourceLoadingSession\u0024Companion"
+      },
+      {
+        "adapter": "kotlin",
+        "value": "opekope2.lilac.impl.tick.TickNotifier"
+      }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "opekope2.lilac.impl.LilacApi"
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${fabricloader}",
+    "fabric-lifecycle-events-v1": "*",
+    "fabric-resource-loader-v0": "*",
+    "fabric-language-kotlin": ">=${fabric_language_kotlin}",
+    "minecraft": ">=1.19.4 <=1.20.2",
+    "java": ">=${java}"
+  }
+}

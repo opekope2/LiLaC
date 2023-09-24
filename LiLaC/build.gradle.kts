@@ -3,6 +3,10 @@ plugins {
     kotlin("jvm")
 }
 
+evaluationDependsOn(":Api")
+evaluationDependsOn(":ResourceLoaderCore")
+evaluationDependsOn(":1.19.4")
+
 base {
     archivesName.set(project.extra["archives_base_name"] as String)
 }
@@ -22,9 +26,12 @@ dependencies {
         "net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String
     )
 
-    api(project(":Api", configuration = "namedElements"))
-    api(project(":ResourceLoaderCore", configuration = "namedElements"))
+    implementation(project(":Api", configuration = "namedElements"))
+    implementation(project(":1.19.4", configuration = "namedElements"))
 }
+
+@Suppress("PropertyName")
+val EMBEDDED_PROJECTS = setOf(":Api", ":ResourceLoaderCore", ":1.19.4")
 
 tasks {
     val javaVersion = JavaVersion.toVersion((project.extra["java_version"] as String).toInt())
@@ -46,6 +53,12 @@ tasks {
         from(rootDir.resolve("LICENSE")) {
             rename { "${it}_${base.archivesName.get()}" }
         }
+        EMBEDDED_PROJECTS.forEach {
+            from(project(it).sourceSets["main"].output) {
+                include("**/*.class")
+            }
+        }
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     processResources {
@@ -68,5 +81,12 @@ tasks {
         sourceCompatibility = javaVersion
         targetCompatibility = javaVersion
         withSourcesJar()
+    }
+
+    named<Jar>("sourcesJar") {
+        EMBEDDED_PROJECTS.forEach {
+            from(project(it).sourceSets["main"].allSource)
+        }
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 }

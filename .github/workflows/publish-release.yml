@@ -11,8 +11,10 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       build-project: true
+      test-project: false
       build-docs: true
       upload-output: true
+      fast: true
 
   publish:
     name: Publish LiLaC
@@ -48,8 +50,8 @@ jobs:
 
           name: LiLaC ${{ github.ref_name }}
           files: |
-            dist/1.19.4/build/libs/!(*-@(dev|sources|javadoc)).jar
-            dist/1.19.4/build/libs/*-@(dev|sources|javadoc).jar
+            dist/LiLaC/build/libs/!(*-@(dev|sources|javadoc)).jar
+            dist/LiLaC/build/libs/*-@(dev|sources|javadoc).jar
             dist/Api/build/libs/!(*-@(dev|sources|javadoc)).jar
           changelog-file: CHANGELOG.g.md
           game-version-filter: releases
