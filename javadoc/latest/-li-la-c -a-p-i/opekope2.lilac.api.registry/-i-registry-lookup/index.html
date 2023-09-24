@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>IRegistryLookup</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../../images/logo-icon.svg">
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>LiLaC API</span>
+            </a>
+    </div>
+    <div>
+1.0.0-beta.3-api    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":Api:dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="LiLaC API::opekope2.lilac.api.registry/IRegistryLookup///PointingToDeclaration//-165573425">
+  <div class="breadcrumbs"><a href="../../../index.html">LiLaC API</a><span class="delimiter">/</span><a href="../index.html">opekope2.lilac.api.registry</a><span class="delimiter">/</span><span class="current">IRegistryLookup</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>IRegistry</span><wbr></wbr><span><span>Lookup</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">IRegistryLookup</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/opekope2/LiLaC/tree/1.0.0-beta.3/Api/src/main/java/opekope2/lilac/api/registry/IRegistryLookup.java#L18">source</a>)</span></span></div><p class="paragraph">A wrapper interface for searching the Minecraft registry.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-793264663%2FFunctions%2F-165573425" anchor-label="getInstance" id="-793264663%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-instance.html"><span>get</span><wbr></wbr><span><span>Instance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-793264663%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-instance.html"><span class="token function">getInstance</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="index.html">IRegistryLookup</a></div><div class="brief ">Returns the implementation of <a href="index.html">IRegistryLookup</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1849072671%2FFunctions%2F-165573425" anchor-label="lookupBiomeId" id="-1849072671%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lookup-biome-id.html"><span>lookup</span><wbr></wbr><span>Biome</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1849072671%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="lookup-biome-id.html"><span class="token function">lookupBiomeId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>world<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/world/World.html">World</a><span class="token punctuation">, </span></span><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>pos<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/util/math/BlockPos.html">BlockPos</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/util/Identifier.html">Identifier</a></div><div class="brief ">Finds the biome ID at the given world position.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1695215326%2FFunctions%2F-165573425" anchor-label="lookupBlockId" id="-1695215326%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lookup-block-id.html"><span>lookup</span><wbr></wbr><span>Block</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1695215326%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="lookup-block-id.html"><span class="token function">lookupBlockId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>block<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/block/Block.html">Block</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/util/Identifier.html">Identifier</a></div><div class="brief ">Finds the ID of the given <code class="lang-kotlin">block</code> in the registry.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-457468840%2FFunctions%2F-165573425" anchor-label="lookupEntityId" id="-457468840%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lookup-entity-id.html"><span>lookup</span><wbr></wbr><span>Entity</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-457468840%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="lookup-entity-id.html"><span class="token function">lookupEntityId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>entity<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/entity/Entity.html">Entity</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/util/Identifier.html">Identifier</a></div><div class="brief ">Finds the ID of the given <code class="lang-kotlin">entity</code> in the registry.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1849916808%2FFunctions%2F-165573425" anchor-label="lookupItemId" id="1849916808%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lookup-item-id.html"><span>lookup</span><wbr></wbr><span>Item</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1849916808%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="lookup-item-id.html"><span class="token function">lookupItemId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>item<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/item/Item.html">Item</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/util/Identifier.html">Identifier</a></div><div class="brief ">Finds the ID of the given <code class="lang-kotlin">item</code> in the registry.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1622097881%2FFunctions%2F-165573425" anchor-label="lookupVillagerProfessionId" id="1622097881%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lookup-villager-profession-id.html"><span>lookup</span><wbr></wbr><span>Villager</span><wbr></wbr><span>Profession</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1622097881%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="lookup-villager-profession-id.html"><span class="token function">lookupVillagerProfessionId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>profession<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/village/VillagerProfession.html">VillagerProfession</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/util/Identifier.html">Identifier</a></div><div class="brief ">Finds the ID of the given villager <code class="lang-kotlin">profession</code> in the registry.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1836614685%2FFunctions%2F-165573425" anchor-label="lookupVillagerTypeId" id="1836614685%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="lookup-villager-type-id.html"><span>lookup</span><wbr></wbr><span>Villager</span><wbr></wbr><span>Type</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1836614685%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="lookup-villager-type-id.html"><span class="token function">lookupVillagerTypeId</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>type<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/village/VillagerType.html">VillagerType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.2+build.1/net/minecraft/util/Identifier.html">Identifier</a></div><div class="brief ">Finds the ID of the given villager <code class="lang-kotlin">type</code> in the registry.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 opekope2. LiLaC is not an official Minecraft product. Not associated with or endorsed by Mojang Studios.</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

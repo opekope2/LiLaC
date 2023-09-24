@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>IResourceLoader</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="../../../images/logo-icon.svg">
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>LiLaC API</span>
+            </a>
+    </div>
+    <div>
+1.0.0-beta.1-api    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":Api:dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="LiLaC API::opekope2.lilac.api.resource.loading/IResourceLoader///PointingToDeclaration//-165573425">
+  <div class="breadcrumbs"><a href="../../../index.html">LiLaC API</a><span class="delimiter">/</span><a href="../index.html">opekope2.lilac.api.resource.loading</a><span class="delimiter">/</span><span class="current">IResourceLoader</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>IResource</span><wbr></wbr><span><span>Loader</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">IResourceLoader</a> : <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html">AutoCloseable</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/opekope2/LiLaC/tree/1.0.0-beta.1-api/Api/src/main/java/opekope2/lilac/api/resource/loading/IResourceLoader.java#L17">source</a>)</span></span></div><p class="paragraph">A wrapper interface around Minecraft and the Fabric Resource Loader API.</p><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><span>net.</span><wbr></wbr><span>fabricmc.</span><wbr></wbr><span>fabric.</span><wbr></wbr><span>api.</span><wbr></wbr><span>resource</span></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1687758019%2FClasslikes%2F-165573425" anchor-label="IFactory" id="1687758019%2FClasslikes%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-i-factory/index.html"><span><span>IFactory</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1687758019%2FClasslikes%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-i-factory/index.html">IFactory</a></div><div class="brief ">Represents a LiLaC resource loader factory.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="787502278%2FFunctions%2F-165573425" anchor-label="canLoad" id="787502278%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="can-load.html"><span>can</span><wbr></wbr><span><span>Load</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="787502278%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="can-load.html"><span class="token function">canLoad</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>resourceName<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief ">Returns whether the current resource loader can load a resource with a given file name.</div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="can-load.html"><span class="token function">canLoad</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>resourcePath<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://maven.fabricmc.net/docs/yarn-1.20.1+build.2/net/minecraft/util/Identifier.html">Identifier</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief ">Returns whether the current resource loader can load a resource at the given path.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-516023088%2FFunctions%2F-165573425" anchor-label="getStartingPath" id="-516023088%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-starting-path.html"><span>get</span><wbr></wbr><span>Starting</span><wbr></wbr><span><span>Path</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-516023088%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-starting-path.html"><span class="token function">getStartingPath</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a></div><div class="brief ">Returns the starting folder where the resource search should be started.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-5246205%2FFunctions%2F-165573425" anchor-label="loadResource" id="-5246205%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="load-resource.html"><span>load</span><wbr></wbr><span><span>Resource</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-5246205%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span></div></div><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="load-resource.html"><span class="token function">loadResource</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>resource<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="../../opekope2.lilac.api.resource/-i-resource-reader/index.html">IResourceReader</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/Nullable///PointingToDeclaration/"><span class="token annotation builtin">Nullable</span></span> </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></div><div class="brief ">Loads the given resource and returns its in-memory representation in the <a href="https://fabricmc.net/wiki/tutorial:resource#prepare_stage">Prepare stage</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="993988987%2FFunctions%2F-165573425" anchor-label="processResource" id="993988987%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="process-resource.html"><span>process</span><wbr></wbr><span><span>Resource</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="993988987%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="process-resource.html"><span class="token function">processResource</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span>resource<span class="token operator">: </span><span><span class="token annotation builtin">@</span><span data-unresolved-link="org.jetbrains.annotations/NotNull///PointingToDeclaration/"><span class="token annotation builtin">NotNull</span></span> </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a></span></span><span class="token punctuation">)</span></div><div class="brief ">Processes the loaded resource from <a href="load-resource.html">loadResource</a> in the <a href="https://fabricmc.net/wiki/tutorial:resource#apply_stage">Apply stage</a>.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Inherited functions</h2>
+        <div class="table"><a data-name="-1117130810%2FFunctions%2F-165573425" anchor-label="close" id="-1117130810%2FFunctions%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="index.html#-1117130810%2FFunctions%2F-165573425"><span><span>close</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1117130810%2FFunctions%2F-165573425"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="index.html#-1117130810%2FFunctions%2F-165573425"><span class="token function">close</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023-2023 opekope2</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

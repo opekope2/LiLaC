@@ -1,0 +1,136 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:opekope2.lilac.annotation////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.annotation/index.html
+$dokka.location:opekope2.lilac.annotation/EntrypointName///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.annotation/-entrypoint-name/index.html
+$dokka.location:opekope2.lilac.annotation/EntrypointName/value/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.annotation/-entrypoint-name/value.html
+$dokka.location:opekope2.lilac.annotation/RequiresImplementation///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.annotation/-requires-implementation/index.html
+$dokka.location:opekope2.lilac.api.dfu////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/index.html
+$dokka.location:opekope2.lilac.api.dfu/IDataResultFactory///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/-i-data-result-factory/index.html
+$dokka.location:opekope2.lilac.api.dfu/IDataResultFactory/error/#java.util.function.Supplier<java.lang.String>#T#com.mojang.serialization.Lifecycle/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/-i-data-result-factory/error.html
+$dokka.location:opekope2.lilac.api.dfu/IDataResultFactory/error/#java.util.function.Supplier<java.lang.String>#T/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/-i-data-result-factory/error.html
+$dokka.location:opekope2.lilac.api.dfu/IDataResultFactory/error/#java.util.function.Supplier<java.lang.String>#com.mojang.serialization.Lifecycle/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/-i-data-result-factory/error.html
+$dokka.location:opekope2.lilac.api.dfu/IDataResultFactory/error/#java.util.function.Supplier<java.lang.String>/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/-i-data-result-factory/error.html
+$dokka.location:opekope2.lilac.api.dfu/IDataResultFactory/getInstance/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/-i-data-result-factory/get-instance.html
+$dokka.location:opekope2.lilac.api.dfu/IDataResultFactory/success/#T#com.mojang.serialization.Lifecycle/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/-i-data-result-factory/success.html
+$dokka.location:opekope2.lilac.api.dfu/IDataResultFactory/success/#T/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.dfu/-i-data-result-factory/success.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/index.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomMetadataSerializer///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-metadata-serializer/index.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomMetadataSerializer/deserialize/#com.mojang.serialization.Codec<T>#net.fabricmc.loader.api.metadata.CustomValue/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-metadata-serializer/deserialize.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomMetadataSerializer/serialize/#com.mojang.serialization.Codec<T>#T/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-metadata-serializer/serialize.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomValueFactory///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-value-factory/index.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomValueFactory/createArray/#net.fabricmc.loader.api.metadata.CustomValue[]/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-value-factory/create-array.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomValueFactory/createBoolean/#boolean/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-value-factory/create-boolean.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomValueFactory/createNumber/#java.lang.Number/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-value-factory/create-number.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomValueFactory/createObject/#java.util.Map<java.lang.String,net.fabricmc.loader.api.metadata.CustomValue>/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-value-factory/create-object.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomValueFactory/createString/#java.lang.String/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-value-factory/create-string.html
+$dokka.location:opekope2.lilac.api.fabric.mod_json/ICustomValueFactory/getNull/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/-i-custom-value-factory/get-null.html
+$dokka.location:opekope2.lilac.api.fabric////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric/index.html
+$dokka.location:opekope2.lilac.api.fabric/FabricCodecs///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric/-fabric-codecs/index.html
+$dokka.location:opekope2.lilac.api.fabric/FabricCodecs/VERSION_PREDICATE/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.fabric/-fabric-codecs/-v-e-r-s-i-o-n_-p-r-e-d-i-c-a-t-e.html
+$dokka.location:opekope2.lilac.api.registry////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/index.html
+$dokka.location:opekope2.lilac.api.registry/IRegistryLookup///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/-i-registry-lookup/index.html
+$dokka.location:opekope2.lilac.api.registry/IRegistryLookup/getInstance/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/-i-registry-lookup/get-instance.html
+$dokka.location:opekope2.lilac.api.registry/IRegistryLookup/lookupBiomeId/#net.minecraft.world.World#net.minecraft.util.math.BlockPos/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/-i-registry-lookup/lookup-biome-id.html
+$dokka.location:opekope2.lilac.api.registry/IRegistryLookup/lookupBlockId/#net.minecraft.block.Block/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/-i-registry-lookup/lookup-block-id.html
+$dokka.location:opekope2.lilac.api.registry/IRegistryLookup/lookupEntityId/#net.minecraft.entity.Entity/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/-i-registry-lookup/lookup-entity-id.html
+$dokka.location:opekope2.lilac.api.registry/IRegistryLookup/lookupItemId/#net.minecraft.item.Item/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/-i-registry-lookup/lookup-item-id.html
+$dokka.location:opekope2.lilac.api.registry/IRegistryLookup/lookupVillagerProfessionId/#net.minecraft.village.VillagerProfession/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/-i-registry-lookup/lookup-villager-profession-id.html
+$dokka.location:opekope2.lilac.api.registry/IRegistryLookup/lookupVillagerTypeId/#net.minecraft.village.VillagerType/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.registry/-i-registry-lookup/lookup-villager-type-id.html
+$dokka.location:opekope2.lilac.api.resource.loading////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoader.IFactory///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loader/-i-factory/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoader.IFactory/createResourceLoader/#opekope2.lilac.api.resource.loading.IResourceLoadingSession/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loader/-i-factory/create-resource-loader.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoader///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loader/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoader/canLoad/#java.lang.String/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loader/can-load.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoader/canLoad/#net.minecraft.util.Identifier/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loader/can-load.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoader/getStartingPath/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loader/get-starting-path.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoader/loadResource/#opekope2.lilac.api.resource.IResourceReader/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loader/load-resource.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoader/processResource/#java.lang.Object/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loader/process-resource.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.IExtensionFactory///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-i-extension-factory/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.IExtensionFactory/createSessionExtension/#java.lang.String#opekope2.lilac.api.resource.loading.IResourceLoader.IFactory#opekope2.lilac.api.resource.loading.IResourceLoadingSession/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-i-extension-factory/create-session-extension.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.ILifecycleListener///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-i-lifecycle-listener/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.ILifecycleListener/onClosed/#opekope2.lilac.api.resource.loading.IResourceLoadingSession/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-i-lifecycle-listener/on-closed.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.ILifecycleListener/onCreated/#opekope2.lilac.api.resource.loading.IResourceLoadingSession/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-i-lifecycle-listener/on-created.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.ILifecycleListener/onStageChanged/#opekope2.lilac.api.resource.loading.IResourceLoadingSession/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-i-lifecycle-listener/on-stage-changed.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.IProperties///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-i-properties/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.IProperties/getStage/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-i-properties/get-stage.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.Stage.APPLY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-stage/-a-p-p-l-y/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.Stage.INACTIVE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-stage/-i-n-a-c-t-i-v-e/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.Stage.INIT///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-stage/-i-n-i-t/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.Stage.PREPARE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-stage/-p-r-e-p-a-r-e/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.Stage///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-stage/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.Stage/valueOf/#java.lang.String/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-stage/value-of.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession.Stage/values/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/-stage/values.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/index.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession/get/#java.lang.String/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/get.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession/getExtension/#java.lang.String/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/get-extension.html
+$dokka.location:opekope2.lilac.api.resource.loading/IResourceLoadingSession/getProperties/#opekope2.lilac.api.resource.loading.IResourceLoadingSession/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/-i-resource-loading-session/get-properties.html
+$dokka.location:opekope2.lilac.api.resource////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/index.html
+$dokka.location:opekope2.lilac.api.resource/IResource///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource/index.html
+$dokka.location:opekope2.lilac.api.resource/IResource/exists/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource/exists.html
+$dokka.location:opekope2.lilac.api.resource/IResource/getId/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource/get-id.html
+$dokka.location:opekope2.lilac.api.resource/IResource/getResourcePack/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource/get-resource-pack.html
+$dokka.location:opekope2.lilac.api.resource/IResourceAccess///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource-access/index.html
+$dokka.location:opekope2.lilac.api.resource/IResourceAccess/getInstance/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource-access/get-instance.html
+$dokka.location:opekope2.lilac.api.resource/IResourceAccess/getResource/#net.minecraft.util.Identifier/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource-access/get-resource.html
+$dokka.location:opekope2.lilac.api.resource/IResourcePack///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource-pack/index.html
+$dokka.location:opekope2.lilac.api.resource/IResourcePack/getDescription/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource-pack/get-description.html
+$dokka.location:opekope2.lilac.api.resource/IResourcePack/getName/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource-pack/get-name.html
+$dokka.location:opekope2.lilac.api.resource/IResourceReader///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource-reader/index.html
+$dokka.location:opekope2.lilac.api.resource/IResourceReader/getInputStream/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.resource/-i-resource-reader/get-input-stream.html
+$dokka.location:opekope2.lilac.api.tick////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.tick/index.html
+$dokka.location:opekope2.lilac.api.tick/ITickHandler///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.tick/-i-tick-handler/index.html
+$dokka.location:opekope2.lilac.api.tick/ITickHandler/onTick/#net.minecraft.world.World#boolean/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.tick/-i-tick-handler/on-tick.html
+$dokka.location:opekope2.lilac.api.tick/ITickNotifier///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.tick/-i-tick-notifier/index.html
+$dokka.location:opekope2.lilac.api.tick/ITickNotifier/addHandler/#opekope2.lilac.api.tick.ITickHandler/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.tick/-i-tick-notifier/add-handler.html
+$dokka.location:opekope2.lilac.api.tick/ITickNotifier/getInstance/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.tick/-i-tick-notifier/get-instance.html
+$dokka.location:opekope2.lilac.api.tick/ITickNotifier/plusAssign/#opekope2.lilac.api.tick.ITickHandler/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.tick/-i-tick-notifier/plus-assign.html
+$dokka.location:opekope2.lilac.api.tick/ITickNotifier/tick/#net.minecraft.world.World/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api.tick/-i-tick-notifier/tick.html
+$dokka.location:opekope2.lilac.api////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/index.html
+$dokka.location:opekope2.lilac.api/ILilacApi///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/index.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getCustomMetadataSerializer/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-custom-metadata-serializer.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getCustomValueFactory/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-custom-value-factory.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getDataResultFactory/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-data-result-factory.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getImplementation/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-implementation.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getImplementationModId/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-implementation-mod-id.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getRegistryLookup/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-registry-lookup.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getResourceAccess/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-resource-access.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getResourceLoadingSessionProperties/#opekope2.lilac.api.resource.loading.IResourceLoadingSession/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-resource-loading-session-properties.html
+$dokka.location:opekope2.lilac.api/ILilacApi/getTickNotifier/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/get-tick-notifier.html
+$dokka.location:opekope2.lilac.api/ILilacApi/isAvailable/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.api/-i-lilac-api/is-available.html
+$dokka.location:opekope2.lilac.exception////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.exception/index.html
+$dokka.location:opekope2.lilac.exception/EntrypointException///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.exception/-entrypoint-exception/index.html
+$dokka.location:opekope2.lilac.exception/EntrypointException/EntrypointException/#java.lang.String/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.exception/-entrypoint-exception/-entrypoint-exception.html
+$dokka.location:opekope2.lilac.exception/ResourceNotFoundException///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.exception/-resource-not-found-exception/index.html
+$dokka.location:opekope2.lilac.exception/ResourceNotFoundException/ResourceNotFoundException/#net.minecraft.util.Identifier/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.exception/-resource-not-found-exception/-resource-not-found-exception.html
+$dokka.location:opekope2.lilac.exception/ResourceNotFoundException/getResourceId/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.exception/-resource-not-found-exception/get-resource-id.html
+$dokka.location:opekope2.lilac.util////PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/index.html
+$dokka.location:opekope2.lilac.util/Tree.Formatter///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-formatter/index.html
+$dokka.location:opekope2.lilac.util/Tree.Formatter/Formatter/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-formatter/-formatter.html
+$dokka.location:opekope2.lilac.util/Tree.Formatter/format/#opekope2.lilac.util.Tree.Node/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-formatter/format.html
+$dokka.location:opekope2.lilac.util/Tree.Formatter/toString/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-formatter/to-string.html
+$dokka.location:opekope2.lilac.util/Tree.Node///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-node/index.html
+$dokka.location:opekope2.lilac.util/Tree.Node/Node/#java.lang.String#opekope2.lilac.util.Tree.Node/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-node/-node.html
+$dokka.location:opekope2.lilac.util/Tree.Node/Node/#java.lang.String/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-node/-node.html
+$dokka.location:opekope2.lilac.util/Tree.Node/appendChild/#java.lang.String/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-node/append-child.html
+$dokka.location:opekope2.lilac.util/Tree.Node/children/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-node/children.html
+$dokka.location:opekope2.lilac.util/Tree.Node/text/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-node/text.html
+$dokka.location:opekope2.lilac.util/Tree.Node/toString/#/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/-node/to-string.html
+$dokka.location:opekope2.lilac.util/Tree///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-tree/index.html
+$dokka.location:opekope2.lilac.util/Util///PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-util/index.html
+$dokka.location:opekope2.lilac.util/Util/checkModVersion/#java.lang.String#java.util.function.Function<net.fabricmc.loader.api.Version,java.lang.Boolean>/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-util/check-mod-version.html
+$dokka.location:opekope2.lilac.util/Util/getEntrypointContainers/#java.lang.Class<T>/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-util/get-entrypoint-containers.html
+$dokka.location:opekope2.lilac.util/Util/getEntrypointName/#java.lang.Class<?>/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-util/get-entrypoint-name.html
+$dokka.location:opekope2.lilac.util/Util/getEntrypoints/#java.lang.Class<T>/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-util/get-entrypoints.html
+$dokka.location:opekope2.lilac.util/Util/getStackTraceElementAt/#int/PointingToDeclaration/-li-la-c -a-p-i/opekope2.lilac.util/-util/get-stack-trace-element-at.html
+opekope2.lilac.annotation
+opekope2.lilac.api
+opekope2.lilac.api.dfu
+opekope2.lilac.api.fabric
+opekope2.lilac.api.fabric.mod_json
+opekope2.lilac.api.registry
+opekope2.lilac.api.resource
+opekope2.lilac.api.resource.loading
+opekope2.lilac.api.tick
+opekope2.lilac.exception
+opekope2.lilac.util
+
