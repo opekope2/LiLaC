@@ -5,6 +5,7 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
 import net.fabricmc.loader.api.metadata.CustomValue;
 import opekope2.lilac.api.ILilacApi;
+import opekope2.lilac.api.dfu.IDataResultFactory;
 import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
 
 import java.util.*;
@@ -13,7 +14,8 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 public final class CustomValueOps implements DynamicOps<CustomValue> {
-    private static final ICustomValueFactory factory = ILilacApi.getImplementation().getCustomValueFactory();
+    private static final ICustomValueFactory CUSTOM_VALUE_FACTORY = ILilacApi.getImplementation().getCustomValueFactory();
+    private static final IDataResultFactory DATA_RESULT_FACTORY = IDataResultFactory.getInstance();
 
     public static CustomValueOps INSTANCE = new CustomValueOps();
 
@@ -21,12 +23,12 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     }
 
     private <R> DataResult<R> createConversionError(CustomValue input, String targetType) {
-        return DataResult.error(() -> "Can't convert `%s` to `%s`".formatted(input.getType().name(), targetType));
+        return DATA_RESULT_FACTORY.error(() -> "Can't convert `%s` to `%s`".formatted(input.getType().name(), targetType));
     }
 
     @Override
     public CustomValue empty() {
-        return factory.getNull();
+        return CUSTOM_VALUE_FACTORY.getNull();
     }
 
     @Override
@@ -44,43 +46,43 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
     @Override
     public DataResult<Number> getNumberValue(CustomValue input) {
         return input.getType() == CustomValue.CvType.NUMBER
-                ? DataResult.success(input.getAsNumber())
+                ? DATA_RESULT_FACTORY.success(input.getAsNumber())
                 : createConversionError(input, "Number");
     }
 
     @Override
     public CustomValue createNumeric(Number i) {
-        return factory.createNumber(i);
+        return CUSTOM_VALUE_FACTORY.createNumber(i);
     }
 
     @Override
     public DataResult<String> getStringValue(CustomValue input) {
         return input.getType() == CustomValue.CvType.STRING
-                ? DataResult.success(input.getAsString())
+                ? DATA_RESULT_FACTORY.success(input.getAsString())
                 : createConversionError(input, "String");
     }
 
     @Override
     public CustomValue createString(String value) {
-        return factory.createString(value);
+        return CUSTOM_VALUE_FACTORY.createString(value);
     }
 
     @Override
     public DataResult<Boolean> getBooleanValue(CustomValue input) {
         return input.getType() == CustomValue.CvType.BOOLEAN
-                ? DataResult.success(input.getAsBoolean())
+                ? DATA_RESULT_FACTORY.success(input.getAsBoolean())
                 : createConversionError(input, "Boolean");
     }
 
     @Override
     public CustomValue createBoolean(boolean value) {
-        return factory.createBoolean(value);
+        return CUSTOM_VALUE_FACTORY.createBoolean(value);
     }
 
     @Override
     public DataResult<CustomValue> mergeToList(CustomValue list, CustomValue value) {
         if (list.getType() != CustomValue.CvType.ARRAY && list != empty()) {
-            return DataResult.error(() -> "Can't merge into `%s` (should be array)".formatted(list.getType().name()));
+            return DATA_RESULT_FACTORY.error(() -> "Can't merge into `%s` (should be array)".formatted(list.getType().name()));
         }
 
         List<CustomValue> l = new ArrayList<>();
@@ -89,16 +91,16 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
         }
         l.add(value);
 
-        return DataResult.success(factory.createArray(l.toArray(CustomValue[]::new)));
+        return DATA_RESULT_FACTORY.success(CUSTOM_VALUE_FACTORY.createArray(l.toArray(CustomValue[]::new)));
     }
 
     @Override
     public DataResult<CustomValue> mergeToMap(CustomValue map, CustomValue key, CustomValue value) {
         if (map.getType() != CustomValue.CvType.OBJECT && map != empty()) {
-            return DataResult.error(() -> "Can't merge into `%s` (should be object)".formatted(map.getType().name()));
+            return DATA_RESULT_FACTORY.error(() -> "Can't merge into `%s` (should be object)".formatted(map.getType().name()));
         }
         if (key.getType() != CustomValue.CvType.STRING) {
-            return DataResult.error(() -> "Key is `%s` (should be string)".formatted(key.getType().name()));
+            return DATA_RESULT_FACTORY.error(() -> "Key is `%s` (should be string)".formatted(key.getType().name()));
         }
 
         Map<String, CustomValue> m = new HashMap<>();
@@ -107,14 +109,14 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
         }
         m.put(key.getAsString(), value);
 
-        return DataResult.success(factory.createObject(m));
+        return DATA_RESULT_FACTORY.success(CUSTOM_VALUE_FACTORY.createObject(m));
     }
 
     @Override
     public DataResult<Stream<Pair<CustomValue, CustomValue>>> getMapValues(CustomValue input) {
         // IntelliJ whacky formatting moment
         return input.getType() == CustomValue.CvType.OBJECT
-                ? DataResult.success(
+                ? DATA_RESULT_FACTORY.success(
                 StreamSupport.stream(input.getAsObject().spliterator(), false)
                         .map(pair -> new Pair<>(createString(pair.getKey()), pair.getValue())))
                 : createConversionError(input, "Map");
@@ -122,19 +124,19 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
 
     @Override
     public CustomValue createMap(Stream<Pair<CustomValue, CustomValue>> map) {
-        return factory.createObject(map.collect(Collectors.toMap(pair -> pair.getFirst().getAsString(), Pair::getSecond)));
+        return CUSTOM_VALUE_FACTORY.createObject(map.collect(Collectors.toMap(pair -> pair.getFirst().getAsString(), Pair::getSecond)));
     }
 
     @Override
     public DataResult<Stream<CustomValue>> getStream(CustomValue input) {
         return (input.getType() == CustomValue.CvType.ARRAY)
-                ? DataResult.success(StreamSupport.stream(input.getAsArray().spliterator(), false))
-                : DataResult.error(() -> "Can't convert `%s` to Stream (should be array)".formatted(input.getType().name()));
+                ? DATA_RESULT_FACTORY.success(StreamSupport.stream(input.getAsArray().spliterator(), false))
+                : DATA_RESULT_FACTORY.error(() -> "Can't convert `%s` to Stream (should be array)".formatted(input.getType().name()));
     }
 
     @Override
     public CustomValue createList(Stream<CustomValue> input) {
-        return factory.createArray(input.toArray(CustomValue[]::new));
+        return CUSTOM_VALUE_FACTORY.createArray(input.toArray(CustomValue[]::new));
     }
 
     @Override
@@ -144,7 +146,7 @@ public final class CustomValueOps implements DynamicOps<CustomValue> {
             StreamSupport.stream(input.getAsObject().spliterator(), false)
                     .filter(pair -> !Objects.equals(pair.getKey(), key))
                     .forEach(pair -> m.put(pair.getKey(), pair.getValue()));
-            return factory.createObject(m);
+            return CUSTOM_VALUE_FACTORY.createObject(m);
         }
         return input;
     }
