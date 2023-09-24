@@ -12,3 +12,6 @@ jobs:
     with:
       build-project: true
       test-project: true
+      build-docs: false
+      upload-output: false
+      fast: false

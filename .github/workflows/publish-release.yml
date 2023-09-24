@@ -11,8 +11,10 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       build-project: true
+      test-project: false
       build-docs: true
       upload-output: true
+      fast: true
 
   publish:
     name: Publish LiLaC
