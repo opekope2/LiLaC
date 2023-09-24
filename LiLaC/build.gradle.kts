@@ -3,9 +3,10 @@ plugins {
     kotlin("jvm")
 }
 
-evaluationDependsOn(":Api")
-evaluationDependsOn(":ResourceLoaderCore")
-evaluationDependsOn(":1.19.4")
+@Suppress("PropertyName")
+val EMBEDDED_PROJECTS = setOf(":Api", ":ResourceLoaderCore", ":1.18", ":1.18.2", ":1.19", ":1.19.3", ":1.19.4")
+
+EMBEDDED_PROJECTS.forEach(::evaluationDependsOn)
 
 base {
     archivesName.set(project.extra["archives_base_name"] as String)
@@ -26,12 +27,10 @@ dependencies {
         "net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String
     )
 
-    implementation(project(":Api", configuration = "namedElements"))
-    implementation(project(":1.19.4", configuration = "namedElements"))
+    EMBEDDED_PROJECTS.forEach {
+        implementation(project(it, configuration = "namedElements"))
+    }
 }
-
-@Suppress("PropertyName")
-val EMBEDDED_PROJECTS = setOf(":Api", ":ResourceLoaderCore", ":1.19.4")
 
 tasks {
     val javaVersion = JavaVersion.toVersion((project.extra["java_version"] as String).toInt())
