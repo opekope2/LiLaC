@@ -16,5 +16,6 @@ include(
     "Api",
     "ResourceLoaderCore",
     "1.18",
+    "1.18.2",
     "1.19.4",
 )
