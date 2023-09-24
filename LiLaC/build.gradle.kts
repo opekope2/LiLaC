@@ -30,6 +30,9 @@ dependencies {
     implementation(project(":1.19.4", configuration = "namedElements"))
 }
 
+@Suppress("PropertyName")
+val EMBEDDED_PROJECTS = setOf(":Api", ":ResourceLoaderCore", ":1.19.4")
+
 tasks {
     val javaVersion = JavaVersion.toVersion((project.extra["java_version"] as String).toInt())
 
@@ -50,16 +53,12 @@ tasks {
         from(rootDir.resolve("LICENSE")) {
             rename { "${it}_${base.archivesName.get()}" }
         }
-        from(project(":Api").sourceSets["main"].output) {
-            include("**/*.class")
-            duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        EMBEDDED_PROJECTS.forEach {
+            from(project(it).sourceSets["main"].output) {
+                include("**/*.class")
+            }
         }
-        from(project(":ResourceLoaderCore").sourceSets["main"].output) {
-            include("**/*.class")
-        }
-        from(project(":1.19.4").sourceSets["main"].output) {
-            include("**/*.class")
-        }
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     processResources {
@@ -82,5 +81,12 @@ tasks {
         sourceCompatibility = javaVersion
         targetCompatibility = javaVersion
         withSourcesJar()
+    }
+
+    named<Jar>("sourcesJar") {
+        EMBEDDED_PROJECTS.forEach {
+            from(project(it).sourceSets["main"].allSource)
+        }
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 }
