@@ -27,8 +27,8 @@ jobs:
       - name: Prepare build
         id: prepare
         run: |
-          echo "UPLOAD=${{ inputs.upload-output && matrix.os == 'ubuntu-latest' }}" >> $GITHUB_OUTPUT
-          echo "FAST=${{ inputs.fast && matrix.os != 'ubuntu-latest' }}" >> $GITHUB_OUTPUT
+          echo "upload=${{ inputs.upload-output && matrix.os == 'ubuntu-latest' }}" >> $GITHUB_OUTPUT
+          echo "fast=${{ inputs.fast && matrix.os != 'ubuntu-latest' }}" >> $GITHUB_OUTPUT
       - name: Checkout repository
         if: steps.prepare.outputs.fast == 'false'
         uses: actions/checkout@v3
