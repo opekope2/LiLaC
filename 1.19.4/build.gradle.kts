@@ -15,15 +15,11 @@ repositories {}
 dependencies {
     minecraft("com.mojang", "minecraft", project.extra["minecraft_version"] as String)
     mappings("net.fabricmc", "yarn", project.extra["yarn_mappings"] as String, classifier = "v2")
-    modImplementation("net.fabricmc", "fabric-loader", project.extra["loader_version"] as String)
-    modImplementation(fabricApi.module("fabric-lifecycle-events-v1", project.extra["fabric_version"] as String))
-    modImplementation(fabricApi.module("fabric-resource-loader-v0", project.extra["fabric_version"] as String))
     modImplementation(
         "net.fabricmc", "fabric-language-kotlin", project.extra["fabric_language_kotlin_version"] as String
     )
 
     api(project(":Api", configuration = "namedElements"))
-    api(project(":ResourceLoaderCore", configuration = "namedElements"))
 }
 
 tasks {
