@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>LiLaC API</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+<link href="images/logo-icon.svg">
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="index.html">
+                    <span>LiLaC API</span>
+            </a>
+    </div>
+    <div>
+1.0.0-beta.3-api    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":Api:dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="LiLaC API::////PointingToDeclaration//-165573425">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Li</span><wbr></wbr><span>La</span><wbr></wbr><span><span>C</span></span> <span><span>API</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":Api:dokkaHtml/main"><p class="paragraph">Documentation of the public LiLaC API.</p><h2 class=""> Adding dependency</h2><p class="paragraph">LiLaC doesn't have a maven repository. You can install it from <a href="https://docs.modrinth.com/maven">Modrinth Maven</a> or <a href="https://www.cursemaven.com/">Curse Maven</a>.</p><p class="paragraph">LiLaC API is shipped as a separate JAR file from the LiLaC implementation, which can be embedded inside other JARs. Use one of <code class="lang-kotlin">modCompileOnly</code>, <code class="lang-kotlin">modCompileOnlyApi</code>, <code class="lang-kotlin">modImplementation</code> configurations in gradle to add a dependency on LiLaC API JAR. The API JAR is not the main file.</p><p class="paragraph">To load the LiLaC implementation at runtime, add the main LiLaC JAR to the <code class="lang-kotlin">modLocalRuntime</code> or <code class="lang-kotlin">modRuntimeOnly</code> configuration. I have no idea what the difference is, maybe ask it in the Fabric discord. I use <code class="lang-kotlin">modLocalRuntime</code>.</p><h3 class=""> Which configuration</h3><blockquote class="quotation"><p class="paragraph">Disclaimer: I'm not a Gradle expert.</p></blockquote><table><thead><tr><th>Configuration</th><th>When to use</th><th>LiLaC API available at</th></tr></thead><tbody><tr><td><code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">modCompileOnly</code></td><td>When you only use those parts of LiLaC API, which are only called by LiLaC (for example, the resource loader API)</td><td>Compile time</td></tr><tr><td><code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">modCompileOnlyApi</code></td><td>Same as <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">modCompileOnly</code>, but use this, if your code exposes part of LiLaC API</td><td>Compile time</td></tr><tr><td><code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">modImplementation</code></td><td>When you directly use LiLaC API annotated with <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">@RequiresImplementation</code></td><td>Compile time and runtime</td></tr></tbody></table><h2 class=""> <code class="lang-kotlin">fabric.mod.json</code></h2><p class="paragraph">If you use LiLaC API, you should add it to one of the dependencies blocks. LiLaC API provides <code class="lang-kotlin">lilac-api</code>, and LiLaC (implementation) provides <code class="lang-kotlin">lilac</code> and <code class="lang-kotlin">lilac-api</code>.</p><p class="paragraph">Some guidelines what to put in which dependency block</p><table><thead><tr><th>Scenario</th><th>What to put in which dependency block</th><th>What to embed</th></tr></thead><tbody><tr><td>You use LiLaC API unconditionally (required dependency)</td><td>Put <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">lilac</code> in <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">depends</code></td><td>Nothing</td></tr><tr><td>You use LiLaC API conditionally (optional dependency)</td><td>Put <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">lilac-api</code> in <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">depends</code></td><td>LiLaC API JAR</td></tr><tr><td>You only use those parts of LiLaC API, which are only called by LiLaC</td><td>Put <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">lilac-api</code> in <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">recommends</code> or <code class="org.jetbrains.dokka.pages.commenttable@3841c6c6 lang-kotlin">suggests</code></td><td>Nothing</td></tr></tbody></table><p class="paragraph">If you want LiLaC to call your API, then go to you probably want LiLaC as a required dependency.</p><blockquote class="quotation"><p class="paragraph">It is recommended to add a dependency on the minor version of LiLaC (API) to avoid crashes caused by breaking changes in LiLaC. This way, Fabric will refuse to load likely incompatible mods.</p><p class="paragraph">For example, <code class="lang-kotlin">&quot;lilac&quot;: &quot;~1.0.0-beta.2&quot;</code> means <code class="lang-kotlin">&gt;=1.0.0-beta.2 &lt;1.1.0</code></p></blockquote><h2 class=""> Embedding LiLaC</h2><p class="paragraph">You may embed LiLaC API to prevent crashes caused by missing classes.</p><p class="paragraph">You can find some guidelines in the previous table.</p><blockquote class="quotation"><p class="paragraph">Avoid embedding LiLaC (implementation).</p></blockquote></div></div>
+  </div>
+  <h2 class="">Packages</h2>
+  <div class="table"><a data-name="-1085896985%2FPackages%2F-165573425" anchor-label="opekope2.lilac.annotation" id="-1085896985%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.annotation/index.html">opekope2.lilac.annotation</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1085896985%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1085896985%2FPackages%2F-165573425" anchor-label="opekope2.lilac.annotation" id="-1085896985%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Contains every LiLaC annotation available for public consumption.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-1027714138%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api" id="-1027714138%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.api/index.html">opekope2.lilac.api</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1027714138%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1027714138%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api" id="-1027714138%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Contains the core LiLaC API class.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-1280507221%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.dfu" id="-1280507221%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.api.dfu/index.html">opekope2.lilac.api.dfu</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1280507221%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="1094191665%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.fabric" id="1094191665%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.api.fabric/index.html">opekope2.lilac.api.fabric</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1094191665%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1094191665%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.fabric" id="1094191665%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Contains a DFU codec for <a href="https://maven.fabricmc.net/docs/fabric-loader-0.14.22/net/fabricmc/loader/api/metadata/version/VersionPredicate.html">VersionPredicate</a>.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="184223974%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.fabric.mod_json" id="184223974%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.api.fabric.mod_json/index.html">opekope2.lilac.api.fabric.mod_json</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="184223974%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="184223974%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.fabric.mod_json" id="184223974%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Contains utilities related to deserializing custom metadata from <code class="lang-kotlin">fabric.mod.json</code>.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-1607312055%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.registry" id="-1607312055%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.api.registry/index.html">opekope2.lilac.api.registry</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1607312055%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1607312055%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.registry" id="-1607312055%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Wrapper code around Minecraft registry providing lookup functionality across multiple Minecraft versions.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="-1743856166%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.resource" id="-1743856166%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.api.resource/index.html">opekope2.lilac.api.resource</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1743856166%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="-1743856166%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.resource" id="-1743856166%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Wrapper interfaces around Minecraft resources and resource packs.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="341127592%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.resource.loading" id="341127592%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.api.resource.loading/index.html">opekope2.lilac.api.resource.loading</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="341127592%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="341127592%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.resource.loading" id="341127592%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">LiLaC resource loading API.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1181436841%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.tick" id="1181436841%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.api.tick/index.html">opekope2.lilac.api.tick</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1181436841%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1181436841%2FPackages%2F-165573425" anchor-label="opekope2.lilac.api.tick" id="1181436841%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Externally trigger-able game tick handling event.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1644010011%2FPackages%2F-165573425" anchor-label="opekope2.lilac.exception" id="1644010011%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.exception/index.html">opekope2.lilac.exception</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1644010011%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1644010011%2FPackages%2F-165573425" anchor-label="opekope2.lilac.exception" id="1644010011%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Exceptions thrown by LiLaC.</p>
+          </span></div>
+      </div>
+    </div>
+<a data-name="1837777530%2FPackages%2F-165573425" anchor-label="opekope2.lilac.util" id="1837777530%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+    <div class="table-row" data-filterable-current=":Api:dokkaHtml/main" data-filterable-set=":Api:dokkaHtml/main">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="-li-la-c -a-p-i/opekope2.lilac.util/index.html">opekope2.lilac.util</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1837777530%2FPackages%2F-165573425"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">jvm</div>
+            </div>
+          </div>
+        </div>
+        <div><span class="brief-comment"><a data-name="1837777530%2FPackages%2F-165573425" anchor-label="opekope2.lilac.util" id="1837777530%2FPackages%2F-165573425" data-filterable-set=":Api:dokkaHtml/main"></a>
+            <p class="paragraph">Various utility functions, which are not necessarily related to Fabric or Minecraft.</p>
+          </span></div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 opekope2. LiLaC is not an official Minecraft product. Not associated with or endorsed by Mojang Studios.</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

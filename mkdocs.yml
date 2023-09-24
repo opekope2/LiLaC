@@ -15,11 +15,13 @@ nav:
   - API docs:
     - Latest: kdoc/latest
     #CI_KDOC_PLACEHOLDER
+    - 1.0.0-beta.3: kdoc/1.0.0-beta.3
     - 1.0.0-beta.2: kdoc/1.0.0-beta.2
     - 1.0.0-beta.1: kdoc/1.0.0-beta.1
   - API docs (Java syntax):
     - Latest: javadoc/latest
     #CI_JAVADOC_PLACEHOLDER
+    - 1.0.0-beta.3: javadoc/1.0.0-beta.3
     - 1.0.0-beta.2: javadoc/1.0.0-beta.2
     - 1.0.0-beta.1: javadoc/1.0.0-beta.1
 markdown_extensions:
