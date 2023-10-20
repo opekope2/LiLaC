@@ -1,6 +1,8 @@
 package opekope2.lilac.impl
 
 import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.api.EnvType
+import net.fabricmc.loader.api.FabricLoader
 import net.fabricmc.loader.api.Version
 import opekope2.lilac.api.ILilacApi
 import opekope2.lilac.api.dfu.IDataResultFactory
@@ -10,7 +12,8 @@ import opekope2.lilac.api.registry.IRegistryLookup
 import opekope2.lilac.api.resource.IResourceAccess
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession
 import opekope2.lilac.api.tick.ITickNotifier
-import opekope2.lilac.impl.tick.TickNotifier
+import opekope2.lilac.impl.tick.ClientTickNotifier
+import opekope2.lilac.impl.tick.ServerTickNotifier
 import opekope2.lilac.internal.fabric.mod_json.CustomMetadataSerializer
 import opekope2.lilac.internal.fabric.mod_json.CustomValueFactory
 import opekope2.lilac.internal.resource.loading.IResourceLoadingSessionHolder
@@ -37,6 +40,9 @@ object LilacApi : ClientModInitializer, ILilacApi {
         checkModVersion("minecraft") { it >= Version.parse("1.18.2") } -> RegistryLookup1182
         else -> RegistryLookup1180
     }
+    private val tickNotifier: ITickNotifier =
+        if (FabricLoader.getInstance().environmentType == EnvType.SERVER) ServerTickNotifier
+        else ClientTickNotifier
     private val customMetadataSerializer = CustomMetadataSerializer()
     private val customValueFactory = CustomValueFactory()
     private val resourceLoadingSessionHolder: IResourceLoadingSessionHolder =
@@ -58,7 +64,7 @@ object LilacApi : ClientModInitializer, ILilacApi {
 
     override fun getRegistryLookup(): IRegistryLookup = registryLookup
 
-    override fun getTickNotifier(): ITickNotifier = TickNotifier
+    override fun getTickNotifier(): ITickNotifier = tickNotifier
 
     override fun getCustomMetadataSerializer(): ICustomMetadataSerializer = customMetadataSerializer
 

@@ -23,16 +23,22 @@
       {
         "adapter": "kotlin",
         "value": "opekope2.lilac.internal.resource.loading.ResourceLoadingSession\u0024Companion"
-      },
-      {
-        "adapter": "kotlin",
-        "value": "opekope2.lilac.impl.tick.TickNotifier"
       }
     ],
     "client": [
       {
         "adapter": "kotlin",
         "value": "opekope2.lilac.impl.LilacApi"
+      },
+      {
+        "adapter": "kotlin",
+        "value": "opekope2.lilac.impl.tick.ClientTickNotifier"
+      }
+    ],
+    "server": [
+      {
+        "adapter": "kotlin",
+        "value": "opekope2.lilac.impl.tick.ServerTickNotifier"
       }
     ]
   },
