@@ -20,12 +20,12 @@ class ResourceLoadingSession : IResourceLoadingSession, AutoCloseable {
         lifecycleListeners.forEach { listener -> listener.onCreated(this) }
     }
 
-    fun createResourceLoader(modId: String, resourceLoaderFactory: IResourceLoader.IFactory): IResourceLoader =
+    fun createResourceLoader(modId: String, resourceLoaderFactory: IResourceLoader.IFactory): IResourceLoader<Any> =
         synchronized(lock) {
             currentModId = modId
             currentFactory = resourceLoaderFactory
 
-            val loader = resourceLoaderFactory.createResourceLoader(this)
+            val loader = resourceLoaderFactory.createResourceLoader<Any>(this)
 
             currentModId = null
             currentFactory = null

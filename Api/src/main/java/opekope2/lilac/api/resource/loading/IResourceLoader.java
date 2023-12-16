@@ -12,9 +12,10 @@ import java.io.InputStream;
 /**
  * A wrapper interface around Minecraft and the Fabric Resource Loader API.
  *
+ * @param <T> The type of the resource passed from {@link #loadResource(IResourceReader)} to {@link #processResource(Object)}
  * @see net.fabricmc.fabric.api.resource
  */
-public interface IResourceLoader extends AutoCloseable {
+public interface IResourceLoader<T> extends AutoCloseable {
     /**
      * Returns the starting folder where the resource search should be started.
      * <br>
@@ -58,7 +59,7 @@ public interface IResourceLoader extends AutoCloseable {
      * to avoid resource leaks.
      */
     @Nullable
-    Object loadResource(@NotNull IResourceReader resource) throws IOException;
+    T loadResource(@NotNull IResourceReader resource) throws IOException;
 
     /**
      * Processes the loaded resource from {@link #loadResource(IResourceReader)} in the
@@ -70,7 +71,7 @@ public interface IResourceLoader extends AutoCloseable {
      *                 This is always an object returned from {@link #loadResource(IResourceReader)}.
      *                 I can't generify it because of technical limitations
      */
-    void processResource(@NotNull Object resource);
+    void processResource(@NotNull T resource);
 
     /**
      * Represents a LiLaC resource loader factory.
@@ -87,6 +88,6 @@ public interface IResourceLoader extends AutoCloseable {
          * @param session The current resource loading session
          */
         @NotNull
-        IResourceLoader createResourceLoader(@NotNull IResourceLoadingSession session);
+        <T> IResourceLoader<T> createResourceLoader(@NotNull IResourceLoadingSession session);
     }
 }

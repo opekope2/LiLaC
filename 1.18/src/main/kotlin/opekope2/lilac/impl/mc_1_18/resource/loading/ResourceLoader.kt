@@ -123,7 +123,7 @@ object ResourceLoader : IResourceLoadingSessionHolder, ClientModInitializer, Ide
         )
     }
 
-    private fun IResourceLoader.loadResource(resource: IResourceReader, modId: String): Any? = try {
+    private fun <T> IResourceLoader<T>.loadResource(resource: IResourceReader, modId: String): T? = try {
         loadResource(resource)
     } catch (e: IOException) {
         logger.warn(
