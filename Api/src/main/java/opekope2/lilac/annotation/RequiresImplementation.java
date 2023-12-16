@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  * @see ILilacApi#getImplementation()
  * @see ILilacApi#isAvailable()
  */
-@Retention(RetentionPolicy.CLASS)
 @Target(ElementType.METHOD)
+@Retention(RetentionPolicy.CLASS)
 public @interface RequiresImplementation {
 }
