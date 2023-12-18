@@ -3,9 +3,12 @@ package opekope2.lilac.util;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.Version;
+import net.fabricmc.loader.api.VersionParsingException;
 import net.fabricmc.loader.api.entrypoint.EntrypointContainer;
 import net.fabricmc.loader.api.metadata.ModMetadata;
+import net.fabricmc.loader.api.metadata.version.VersionPredicate;
 import opekope2.lilac.annotation.EntrypointName;
+import opekope2.lilac.annotation.RequiresMinecraftVersion;
 import opekope2.lilac.exception.EntrypointException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -107,5 +110,18 @@ public final class Util {
         }
 
         return FabricLoader.getInstance().getEntrypointContainers(name, type);
+    }
+
+    /**
+     * Creates a {@link VersionPredicate} from the given {@link RequiresMinecraftVersion} annotation instance.
+     *
+     * @param annotationInstance The annotation to create a version predicate from
+     */
+    public static VersionPredicate toVersionPredicate(RequiresMinecraftVersion annotationInstance) {
+        try {
+            return VersionPredicate.parse(">=" + annotationInstance.minVersion() + " " + "<=" + annotationInstance.maxVersion());
+        } catch (VersionParsingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
