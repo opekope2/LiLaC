@@ -1,13 +1,19 @@
 package opekope2.lilac.api;
 
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.util.math.MatrixStack;
 import opekope2.lilac.annotation.RequiresImplementation;
+import opekope2.lilac.annotation.RequiresMinecraftVersion;
 import opekope2.lilac.api.dfu.IDataResultFactory;
 import opekope2.lilac.api.fabric.mod_json.ICustomMetadataSerializer;
 import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
+import opekope2.lilac.api.gui.IDrawContext1180;
+import opekope2.lilac.api.gui.IDrawContext1200;
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession;
 import opekope2.lilac.api.tick.ITickNotifier;
+import opekope2.lilac.util.MinecraftVersion;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -88,6 +94,28 @@ public interface ILilacApi {
     IDataResultFactory getDataResultFactory();
 
     /**
+     * Creates an instance of {@link IDrawContext1180}, which operates on the given matrix stack.
+     *
+     * @param matrixStack The first parameter of most {@code DrawableHelper} methods take
+     * @see IDrawContext1180#create(MatrixStack)
+     */
+    @NotNull
+    @RequiresImplementation
+    @RequiresMinecraftVersion(minVersion = MinecraftVersion.MINECRAFT_1_18, maxVersion = MinecraftVersion.MINECRAFT_1_19_4)
+    IDrawContext1180 createDrawContext(@NotNull MatrixStack matrixStack);
+
+    /**
+     * Creates an instance of {@link IDrawContext1200}, which wraps the given draw context.
+     *
+     * @param drawContext The backing draw context
+     * @see IDrawContext1200#create(DrawContext)
+     */
+    @NotNull
+    @RequiresImplementation
+    @RequiresMinecraftVersion(minVersion = MinecraftVersion.MINECRAFT_1_20)
+    IDrawContext1200 createDrawContext(@NotNull DrawContext drawContext);
+
+    /**
      * Returns the implementation of {@link ILilacApi}.
      */
     @NotNull
@@ -161,6 +189,18 @@ final class ILilacApi$Instance implements ILilacApi {
     @Override
     @NotNull
     public IDataResultFactory getDataResultFactory() {
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
+    }
+
+    @Override
+    @NotNull
+    public IDrawContext1180 createDrawContext(@NotNull MatrixStack matrixStack) {
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
+    }
+
+    @Override
+    @NotNull
+    public IDrawContext1200 createDrawContext(@NotNull DrawContext drawContext) {
         throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 }
