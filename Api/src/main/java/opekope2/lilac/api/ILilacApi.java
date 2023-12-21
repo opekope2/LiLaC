@@ -1,6 +1,7 @@
 package opekope2.lilac.api;
 
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.toast.ToastManager;
 import net.minecraft.client.util.math.MatrixStack;
 import opekope2.lilac.annotation.RequiresImplementation;
 import opekope2.lilac.annotation.RequiresMinecraftVersion;
@@ -9,6 +10,7 @@ import opekope2.lilac.api.fabric.mod_json.ICustomMetadataSerializer;
 import opekope2.lilac.api.fabric.mod_json.ICustomValueFactory;
 import opekope2.lilac.api.gui.IDrawContext1180;
 import opekope2.lilac.api.gui.IDrawContext1200;
+import opekope2.lilac.api.gui.IToastManager;
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession;
@@ -116,6 +118,16 @@ public interface ILilacApi {
     IDrawContext1200 createDrawContext(@NotNull DrawContext drawContext);
 
     /**
+     * Gets a wrapper {@link IToastManager} for the given {@link ToastManager} instance.
+     *
+     * @param toastManager The {@link ToastManager} to wrap
+     * @see IToastManager#get(ToastManager)
+     */
+    @NotNull
+    @RequiresImplementation
+    IToastManager getToastManager(@NotNull ToastManager toastManager);
+
+    /**
      * Returns the implementation of {@link ILilacApi}.
      */
     @NotNull
@@ -201,6 +213,12 @@ final class ILilacApi$Instance implements ILilacApi {
     @Override
     @NotNull
     public IDrawContext1200 createDrawContext(@NotNull DrawContext drawContext) {
+        throw new UnsupportedOperationException("LiLaC implementation is not available");
+    }
+
+    @Override
+    @NotNull
+    public IToastManager getToastManager(@NotNull ToastManager toastManager) {
         throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 }
