@@ -23,6 +23,7 @@ dependencies {
 
     api(project(":Api", configuration = "namedElements"))
     api(project(":ResourceLoaderCore", configuration = "namedElements"))
+    implementation(project(":1.19.1", configuration = "namedElements"))
 }
 
 tasks {

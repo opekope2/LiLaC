@@ -4,7 +4,19 @@ plugins {
 }
 
 @Suppress("PropertyName")
-val EMBEDDED_PROJECTS = setOf(":Api", ":ResourceLoaderCore", ":1.18", ":1.18.2", ":1.19", ":1.19.3", ":1.19.4")
+val EMBEDDED_PROJECTS = setOf(
+    ":Api",
+    ":ResourceLoaderCore",
+    ":1.18",
+    ":1.18.2",
+    ":1.19",
+    ":1.19.1",
+    ":1.19.3",
+    ":1.19.4",
+    ":1.20",
+    ":1.20.2",
+    ":1.20.3",
+)
 
 EMBEDDED_PROJECTS.forEach(::evaluationDependsOn)
 
