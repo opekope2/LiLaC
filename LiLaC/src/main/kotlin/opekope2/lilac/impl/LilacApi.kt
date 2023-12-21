@@ -87,7 +87,7 @@ object LilacApi : ClientModInitializer, ILilacApi {
     private val toastManagers = WeakHashMap<ToastManager, IToastManager>()
 
     override fun onInitializeClient() {
-        (resourceLoadingSessionHolder as ClientModInitializer).onInitializeClient()
+        ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(resourceReloadListener)
     }
 
     override fun isAvailable(): Boolean = true

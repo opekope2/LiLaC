@@ -1,11 +1,8 @@
 package opekope2.lilac.impl.mc_1_18.resource.loading
 
-import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.minecraft.resource.ResourceManager
 import net.minecraft.resource.ResourceReloader
-import net.minecraft.resource.ResourceType
 import net.minecraft.util.Identifier
 import net.minecraft.util.profiler.Profiler
 import opekope2.lilac.annotation.RequiresMinecraftVersion
@@ -26,7 +23,7 @@ import java.util.concurrent.Executor
     minVersion = MinecraftVersion.MINECRAFT_1_18,
     maxVersion = MinecraftVersion.MINECRAFT_1_18_2
 )
-object ResourceLoader1180 : IResourceLoadingSessionHolder, ClientModInitializer, IdentifiableResourceReloadListener {
+object ResourceLoader1180 : IResourceLoadingSessionHolder, IdentifiableResourceReloadListener {
     private val logger = LoggerFactory.getLogger("LiLaC/ResourceLoader")
     private val sessions = mutableSetOf<ResourceLoadingSession>()
 
@@ -35,10 +32,6 @@ object ResourceLoader1180 : IResourceLoadingSessionHolder, ClientModInitializer,
             if (session is ResourceLoadingSession && session in sessions) session.stage
             else IResourceLoadingSession.Stage.INACTIVE
         }
-
-    override fun onInitializeClient() {
-        ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(this)
-    }
 
     override fun getFabricId(): Identifier = Identifier("lilac", "lilac_resource_loader")
 
