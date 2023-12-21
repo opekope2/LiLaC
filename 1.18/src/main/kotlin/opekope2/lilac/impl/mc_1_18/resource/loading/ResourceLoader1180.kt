@@ -1,36 +1,34 @@
-package opekope2.lilac.impl.mc_1_19.resource.loading
+package opekope2.lilac.impl.mc_1_18.resource.loading
 
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
-import net.fabricmc.loader.api.Version
-import net.minecraft.resource.Resource
 import net.minecraft.resource.ResourceManager
 import net.minecraft.resource.ResourceReloader
 import net.minecraft.resource.ResourceType
 import net.minecraft.util.Identifier
 import net.minecraft.util.profiler.Profiler
+import opekope2.lilac.annotation.RequiresMinecraftVersion
 import opekope2.lilac.api.resource.IResourceReader
 import opekope2.lilac.api.resource.loading.IResourceLoader
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession
+import opekope2.lilac.impl.mc_1_18.resource.ResourceReader1180
 import opekope2.lilac.internal.resource.loading.IResourceLoadingSessionHolder
 import opekope2.lilac.internal.resource.loading.ResourceLoadingSession
-import opekope2.lilac.util.Util
+import opekope2.lilac.util.MinecraftVersion
+import opekope2.lilac.util.Util.getEntrypointContainers
 import org.slf4j.LoggerFactory
 import java.io.IOException
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
-import opekope2.lilac.impl.mc_1_19.resource.ResourceReader as ResourceReader1190
-import opekope2.lilac.impl.mc_1_19_3.resource.ResourceReader as ResourceReader1193
 
-@Suppress("unused")
-object ResourceLoader : IResourceLoadingSessionHolder, ClientModInitializer, IdentifiableResourceReloadListener {
+@RequiresMinecraftVersion(
+    minVersion = MinecraftVersion.MINECRAFT_1_18,
+    maxVersion = MinecraftVersion.MINECRAFT_1_18_2
+)
+object ResourceLoader1180 : IResourceLoadingSessionHolder, ClientModInitializer, IdentifiableResourceReloadListener {
     private val logger = LoggerFactory.getLogger("LiLaC/ResourceLoader")
     private val sessions = mutableSetOf<ResourceLoadingSession>()
-
-    private val createResourceReader: (Identifier, Resource) -> IResourceReader =
-        if (Util.checkModVersion("minecraft") { it >= Version.parse("1.19.3") }) ::ResourceReader1193
-        else ::ResourceReader1190
 
     override fun getResourceLoadingSessionProperties(session: IResourceLoadingSession): IResourceLoadingSession.IProperties =
         IResourceLoadingSession.IProperties {
@@ -52,7 +50,7 @@ object ResourceLoader : IResourceLoadingSessionHolder, ClientModInitializer, Ide
         prepareExecutor: Executor,
         applyExecutor: Executor
     ): CompletableFuture<Void> {
-        val resourceLoaderPlugins = Util.getEntrypointContainers(IResourceLoader.IFactory::class.java)
+        val resourceLoaderPlugins = getEntrypointContainers(IResourceLoader.IFactory::class.java)
         if (resourceLoaderPlugins.isEmpty()) {
             logger.info("No resource loader plugins were found, no resources to load")
             return synchronizer.whenPrepared(Unit).thenRunAsync({ }, applyExecutor)
@@ -90,7 +88,7 @@ object ResourceLoader : IResourceLoadingSessionHolder, ClientModInitializer, Ide
                     prepareExecutor
                 )
                 .thenApplyAsync(
-                    { resources -> resources.map { (id, resource) -> createResourceReader(id, resource) } },
+                    { resources -> resources.map { id -> ResourceReader1180(id) } },
                     prepareExecutor
                 )
                 .thenApplyAsync(

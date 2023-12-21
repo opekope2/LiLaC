@@ -5,7 +5,7 @@ import net.minecraft.resource.metadata.PackResourceMetadata
 import net.minecraft.text.Text
 import opekope2.lilac.api.resource.IResourcePack
 
-class ResourcePack(private val pack: ResourcePack) : IResourcePack {
+class ResourcePack1180(private val pack: ResourcePack) : IResourcePack {
     override fun getName(): String = pack.name
 
     override fun getDescription(): Text? = try {

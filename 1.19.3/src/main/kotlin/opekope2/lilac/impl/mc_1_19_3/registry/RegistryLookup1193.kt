@@ -9,10 +9,15 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.village.VillagerProfession
 import net.minecraft.village.VillagerType
 import net.minecraft.world.World
+import opekope2.lilac.annotation.RequiresMinecraftVersion
 import opekope2.lilac.api.registry.IRegistryLookup
+import opekope2.lilac.util.MinecraftVersion
 import kotlin.jvm.optionals.getOrNull
 
-object RegistryLookup : IRegistryLookup {
+@RequiresMinecraftVersion(
+    minVersion = MinecraftVersion.MINECRAFT_1_19_3,
+)
+object RegistryLookup1193 : IRegistryLookup {
     override fun lookupItemId(item: Item): Identifier = Registries.ITEM.getId(item)
 
     override fun lookupBlockId(block: Block): Identifier = Registries.BLOCK.getId(block)

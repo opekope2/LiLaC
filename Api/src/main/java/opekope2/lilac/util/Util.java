@@ -124,4 +124,33 @@ public final class Util {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Chooses the first supplied class, which has {@link RequiresMinecraftVersion} annotation,
+     * and it matches currently running version of Minecraft.
+     *
+     * @param classes The classes to choose from
+     * @param <T>     The type of the classes
+     * @return The first matching class or {@code null}, if no match was found
+     */
+    @Nullable
+    @SafeVarargs
+    public static <T> Class<? extends T> chooseByRequiredMinecraftVersion(@NotNull Class<? extends T>... classes) {
+        MinecraftVersion minecraftVersion = MinecraftVersion.current();
+        if (minecraftVersion == null) throw new RuntimeException("Failed to detect current Minecraft version");
+        int currentOrdinal = minecraftVersion.ordinal();
+
+        for (Class<? extends T> cls : classes) {
+            RequiresMinecraftVersion minecraftVersionRequirement = cls.getAnnotation(RequiresMinecraftVersion.class);
+            if (minecraftVersionRequirement == null) continue;
+            MinecraftVersion minVersion = minecraftVersionRequirement.minVersion(),
+                    maxVersion = minecraftVersionRequirement.maxVersion();
+
+            if (minVersion.ordinal() <= currentOrdinal && currentOrdinal <= maxVersion.ordinal()) {
+                return cls;
+            }
+        }
+
+        return null;
+    }
 }
