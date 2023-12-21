@@ -1,8 +1,9 @@
 package opekope2.lilac.util;
 
 import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import net.fabricmc.loader.api.SemanticVersion;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Minecraft versions supported by LiLaC.
@@ -49,27 +50,25 @@ public enum MinecraftVersion {
     }
 
     /**
-     * Detects and returns the {@link MinecraftVersion} corresponding to the currently running Minecraft version
-     * or {@code null}, if the detection fails.
+     * Detects and returns the {@link MinecraftVersion} corresponding to the currently running Minecraft version.
      */
-    @Nullable
+    @NotNull
     public static MinecraftVersion current() {
-        var minecraftContainer = FabricLoader.getInstance().getModContainer("minecraft");
-        if (minecraftContainer.isEmpty()) return null;
+        ModContainer minecraftContainer = FabricLoader.getInstance().getModContainer("minecraft").orElseThrow();
         // FIXME assumes fabric-loader internal behavior
-        var minecraftVersion = (SemanticVersion) minecraftContainer.get().getMetadata().getVersion();
+        SemanticVersion minecraftVersion = (SemanticVersion) minecraftContainer.getMetadata().getVersion();
 
-        var major = minecraftVersion.getVersionComponent(0);
-        var minor = minecraftVersion.getVersionComponent(1);
-        var patch = minecraftVersion.getVersionComponent(2);
+        int major = minecraftVersion.getVersionComponent(0),
+                minor = minecraftVersion.getVersionComponent(1),
+                patch = minecraftVersion.getVersionComponent(2);
         // TODO snapshots
 
-        for (var version : MinecraftVersion.values()) {
+        for (MinecraftVersion version : MinecraftVersion.values()) {
             if (version.major == major && version.minor == minor && version.patch == patch) {
                 return version;
             }
         }
 
-        return null;
+        throw new RuntimeException("Failed to detect current Minecraft version");
     }
 }

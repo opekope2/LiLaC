@@ -137,7 +137,6 @@ public final class Util {
     @SafeVarargs
     public static <T> Class<? extends T> chooseByRequiredMinecraftVersion(@NotNull Class<? extends T>... classes) {
         MinecraftVersion minecraftVersion = MinecraftVersion.current();
-        if (minecraftVersion == null) throw new RuntimeException("Failed to detect current Minecraft version");
         int currentOrdinal = minecraftVersion.ordinal();
 
         for (Class<? extends T> cls : classes) {
