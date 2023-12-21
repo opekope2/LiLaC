@@ -32,13 +32,13 @@
       },
       {
         "adapter": "kotlin",
-        "value": "opekope2.lilac.impl.tick.ClientTickNotifier"
+        "value": "opekope2.lilac.impl.tick.ClientTickHandler"
       }
     ],
     "server": [
       {
         "adapter": "kotlin",
-        "value": "opekope2.lilac.impl.tick.ServerTickNotifier"
+        "value": "opekope2.lilac.impl.tick.ServerTickHandler"
       }
     ]
   },

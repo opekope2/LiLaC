@@ -14,7 +14,6 @@ import opekope2.lilac.api.gui.IToastManager;
 import opekope2.lilac.api.registry.IRegistryLookup;
 import opekope2.lilac.api.resource.IResourceAccess;
 import opekope2.lilac.api.resource.loading.IResourceLoadingSession;
-import opekope2.lilac.api.tick.ITickNotifier;
 import opekope2.lilac.util.MinecraftVersion;
 import org.jetbrains.annotations.NotNull;
 
@@ -52,15 +51,6 @@ public interface ILilacApi {
     @NotNull
     @RequiresImplementation
     IRegistryLookup getRegistryLookup();
-
-    /**
-     * Returns the implementation of {@link ITickNotifier}.
-     *
-     * @see ITickNotifier#getInstance()
-     */
-    @NotNull
-    @RequiresImplementation
-    ITickNotifier getTickNotifier();
 
     /**
      * Returns the implementation of {@link ICustomMetadataSerializer}.
@@ -171,12 +161,6 @@ final class ILilacApi$Instance implements ILilacApi {
     @Override
     @NotNull
     public IRegistryLookup getRegistryLookup() {
-        throw new UnsupportedOperationException("LiLaC implementation is not available");
-    }
-
-    @Override
-    @NotNull
-    public ITickNotifier getTickNotifier() {
         throw new UnsupportedOperationException("LiLaC implementation is not available");
     }
 

@@ -64,8 +64,6 @@ object LilacApi : ClientModInitializer, ILilacApi {
 
     override fun getRegistryLookup(): IRegistryLookup = registryLookup
 
-    override fun getTickNotifier(): ITickNotifier = tickNotifier
-
     override fun getCustomMetadataSerializer(): ICustomMetadataSerializer = customMetadataSerializer
 
     override fun getCustomValueFactory(): ICustomValueFactory = customValueFactory
